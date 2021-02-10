@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@themepixels">
+  <meta name="twitter:creator" content="@themepixels">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Annswer">
+  <meta name="twitter:description" content="Annswer Platform">
+  <meta name="twitter:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static">
+  <meta property="og:title" content="Annswer">
+  <meta property="og:description" content="Annswer Platform">
+
+  <meta property="og:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:secure_url"
+    content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+
+  <!-- Meta -->
+  <meta name="description" content="Annswer Platform">
+  <meta name="author" content="Annswer Group">
+
+  <title>Annswer - Artificial Neural Network Platform</title>
+
+  <!-- vendor css -->
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css"
+    rel="stylesheet">
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css"
+    rel="stylesheet">
+
+  <!-- Bracket CSS -->
+  <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+</head>
+
+<body>
+
+  <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+    <form method="post" name="login" action="./signin">
+      <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+        <div class="signin-logo tx-center tx-28 tx-bold tx-inverse">
+          <a href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}">
+            <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/annswer_logo.svg" width="90%">
+          </a>
+        </div>
+        <!-- <div class="tx-center mg-b-60">The Admin Template For Perfectionist</div> -->
+        <br>
+        <div class="form-group">
+          <input name="email" id="email" type="text" class="form-control" placeholder="請輸入電子郵件信箱">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <input name="password" id="password" type="password" class="form-control" placeholder="請輸入密碼">
+          <a href="/resetpw" class="tx-info tx-12 d-block mg-t-10">忘記密碼?</a>
+        </div><!-- form-group -->
+        <button type="submit" class="btn btn-info btn-block">登入</button>
+
+        <div class="mg-t-60 tx-center">尚未成為會員嗎? <a href="./signup" class="tx-info">註冊會員</a></div>
+      </div><!-- login-wrapper -->
+      <input name="sso" id="sso" type="hidden" value="{{payload|default('')}}">
+      <input name="sig" id="sig" type="hidden" value="{{signature|default('')}}">
+    </form>
+  </div><!-- d-flex -->
+
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+
+</body>
+
+</html>

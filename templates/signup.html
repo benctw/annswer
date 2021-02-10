@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- <?php 
+$pages_user_login_register = True;
+require_once ('secure.php');
+?> -->
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@themepixels">
+  <meta name="twitter:creator" content="@themepixels">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Annswer">
+  <meta name="twitter:description" content="Annswer Platform">
+  <meta name="twitter:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static">
+  <meta property="og:title" content="Annswer">
+  <meta property="og:description" content="Annswer Platform">
+
+  <meta property="og:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:secure_url"
+    content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+
+  <!-- Meta -->
+  <meta name="description" content="Annswer Platform">
+  <meta name="author" content="Annswer Group">
+
+  <title>Annswer - Artificial Neural Network Platform</title>
+
+  <!-- vendor css -->
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css"
+    rel="stylesheet">
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css"
+    rel="stylesheet">
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/css/select2.min.css"
+    rel="stylesheet">
+
+  <!-- Bracket CSS -->
+  <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+</head>
+
+<body style="background-color: #1D2939;">
+  <div class="d-flex  justify-content-center bg-br-primary ht-100v" style="margin: 20px;">
+    <form method="post" name="register" action="/signup">
+      <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-white rounded shadow-base">
+        <div class="form-group">
+          <div class="signin-logo tx-center tx-28 tx-bold tx-inverse">
+            <a href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}">
+              <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/annswer_logo.svg" width="90%">
+            </a>
+          </div>
+        </div>
+        <!-- <div class="tx-center mg-b-40">The Admin Template For Perfectionist</div> -->
+        <br>
+        <div class="form-group">
+          <label class="form-control-label">電子郵件信箱 (您的登入帳號): <span class="tx-danger">*</span></label>
+          <input name="email" id="email" type="text" class="form-control" placeholder="這將是您的登入帳號。不可重複">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-control-label">使用者名稱 (我們在這裡如何稱呼您): <span class="tx-danger">*</span></label>
+          <input name="username" id="username" type="text" class="form-control" placeholder="我們在這裡如何稱呼您? 不可重複，至少3個字元">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-control-label">密碼: <span class="tx-danger">*</span></label>
+          <input name="password1" id="password1" type="password" class="form-control" placeholder="請輸入密碼 (至少8碼)">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <input name="password2" id="password2" type="password" class="form-control" placeholder="請再次輸入密碼 (至少8碼)">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-control-label">姓: <span class="tx-danger">*</span></label>
+          <input name="name_last" id="name_last" type="text" class="form-control" placeholder="姓，如：邱、李、陳...">
+        </div><!-- form-group -->
+        <div class="form-group">
+          <label class="form-control-label">名: <span class="tx-danger">*</span></label>
+          <input name="name_first" id="name_first" type="text" class="form-control" placeholder="名，如：威傑...">
+        </div><!-- form-group -->
+        <!--
+        <div class="form-group">
+          <label class="d-block tx-11 tx-uppercase tx-medium tx-spacing-1">Birthday</label>
+          <div class="row row-xs">
+            <div class="col-sm-4">
+              <select class="form-control select2" data-placeholder="Month">
+                <option label="Month"></option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+              </select>
+            </div>
+            <div class="col-sm-4 mg-t-20 mg-sm-t-0">
+              <select class="form-control select2" data-placeholder="Day">
+                <option label="Day"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="col-sm-4 mg-t-20 mg-sm-t-0">
+              <select class="form-control select2" data-placeholder="Year">
+                <option label="Year"></option>
+                <option value="1">2010</option>
+                <option value="2">2011</option>
+                <option value="3">2012</option>
+                <option value="4">2013</option>
+                <option value="5">2014</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        -->
+        <div class="form-group tx-12">By clicking the Sign Up button below, you agreed to our privacy policy and terms
+          of use of our website.</div>
+        <button type="submit" class="btn btn-info btn-block">註冊</button>
+
+        <div class="mg-t-40 tx-center">已經有會員資格了嗎? <a href="/signin" class="tx-info">登入</a></div>
+      </div><!-- login-wrapper -->
+    </form>
+  </div><!-- d-flex -->
+
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/js/select2.min.js"></script>
+  <script>
+    $(function () {
+      'use strict';
+
+      $('.select2').select2({
+        minimumResultsForSearch: Infinity
+      });
+    });
+  </script>
+
+</body>
+
+</html>

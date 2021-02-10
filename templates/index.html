@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@themepixels">
+    <meta name="twitter:creator" content="@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Annswer">
+    <meta name="twitter:description" content="Annswer Platform">
+    <meta name="twitter:image" content="//annswer.org/img/social.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="//annswer.org">
+    <meta property="og:title" content="Annswer">
+    <meta property="og:description" content="Annswer Platform">
+
+    <meta property="og:image" content="//annswer.org/img/social.png">
+    <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Annswer Platform">
+    <meta name="author" content="Annswer Group">
+
+    <title>Annswer - Artificial Neural Network Platform</title>
+
+    <!-- vendor css -->
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/chartist/chartist.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+  </head>
+
+  <body>
+
+    <!-- ########## START: LEFT PANEL ########## -->
+    {% include 'left_panel.html' %} 
+    
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="br-header">
+      <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+        {% include 'header-middle.html' %}
+        <div class="input-group hidden-xs-down wd-170 transition" style="visibility: hidden;">
+          <input id="searchbox" type="text" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+          </span>
+        </div><!-- input-group -->
+      </div><!-- br-header-left -->
+      <div class="br-header-right">
+        <nav class="nav" style="visibility: hidden;">
+          <div class="dropdown">
+            <a href="" class="nav-link pd-x-7 pos-relative" data-toggle="dropdown">
+              <i class="icon ion-ios-email-outline tx-24"></i>
+              <!-- start: if statement -->
+              <span class="square-8 bg-danger pos-absolute t-15 r-0 rounded-circle"></span>
+              <!-- end: if statement -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+              <div class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+                <label class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Messages</label>
+                <a href="" class="tx-11">+ Add New Message</a>
+              </div><!-- d-flex -->
+
+              <div class="media-list">
+                <!-- loop starts here -->
+                <a href="" class="media-list-link">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Donna Seay</p>
+                        <span class="tx-11 tx-gray-500">2 minutes ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring.</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <!-- loop ends here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Samantha Francis</p>
+                        <span class="tx-11 tx-gray-500">3 hours ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">My entire soul, like these sweet mornings of spring.</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Robert Walker</p>
+                        <span class="tx-11 tx-gray-500">5 hours ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">I should be incapable of drawing a single stroke at the present moment...</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Larry Smith</p>
+                        <span class="tx-11 tx-gray-500">Yesterday</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">When, while the lovely valley teems with vapour around me, and the meridian sun strikes...</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <div class="pd-y-10 tx-center bd-t">
+                  <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i> Show All Messages</a>
+                </div>
+              </div><!-- media-list -->
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+          <div class="dropdown">
+            <a href="" class="nav-link pd-x-7 pos-relative" data-toggle="dropdown">
+              <i class="icon ion-ios-bell-outline tx-24"></i>
+              <!-- start: if statement -->
+              <span class="square-8 bg-danger pos-absolute t-15 r-5 rounded-circle"></span>
+              <!-- end: if statement -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+              <div class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+                <label class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Notifications</label>
+                <a href="" class="tx-11">Mark All as Read</a>
+              </div><!-- d-flex -->
+
+              <div class="media-list">
+                <!-- loop starts here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Suzzeth Bungaos</strong> tagged you and 18 others in a post.</p>
+                      <span class="tx-12">October 03, 2017 8:45am</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <!-- loop ends here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Mellisa Brown</strong> appreciated your work <strong class="tx-medium tx-gray-800">The Social Network</strong></p>
+                      <span class="tx-12">October 02, 2017 12:44am</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700">20+ new items added are for sale in your <strong class="tx-medium tx-gray-800">Sale Group</strong></p>
+                      <span class="tx-12">October 01, 2017 10:20pm</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Julius Erving</strong> wants to connect with you on your conversation with <strong class="tx-medium tx-gray-800">Ronnie Mara</strong></p>
+                      <span class="tx-12">October 01, 2017 6:08pm</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <div class="pd-y-10 tx-center bd-t">
+                  <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i> Show All Notifications</a>
+                </div>
+              </div><!-- media-list -->
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+          <div class="dropdown">
+            <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name hidden-md-down">Katherine</span>
+              <img src="//via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
+              <span class="square-10 bg-success"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
+                <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
+                <li><a href=""><i class="icon ion-ios-download"></i> Downloads</a></li>
+                <li><a href=""><i class="icon ion-ios-star"></i> Favorites</a></li>
+                <li><a href=""><i class="icon ion-ios-folder"></i> Collections</a></li>
+                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+        <div class="navicon-right">
+          <a id="btnRightMenu" href="" class="pos-relative">
+            <i class="icon ion-ios-chatboxes-outline"></i>
+            <!-- start: if statement -->
+            <span class="square-8 bg-danger pos-absolute t-10 r--5 rounded-circle" style="visibility: hidden;"></span>
+            <!-- end: if statement -->
+          </a>
+        </div><!-- navicon-right -->
+      </div><!-- br-header-right -->
+    </div><!-- br-header -->
+    <!-- ########## END: HEAD PANEL ########## -->
+
+    <!-- ########## START: RIGHT PANEL ########## -->
+    {% include 'right_panel.html' %}
+    <!-- ########## END: RIGHT PANEL ########## --->
+    
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <!-- ================= -->
+      <!-- Parallax Header Starts -->
+      <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/startup.css" rel="stylesheet">
+      <!-- <main id="top" class="masthead" role="main">
+        <div class="container" style="margin: 0px;"> -->
+          <!-- Startup Logo -->
+          <!-- <div class="logo" style="margin-top: -40px; padding: 0px 0;">
+              <img src="images/annswer_logo_white.svg" alt="startup-logo" style="max-width:100%;">
+          </div> -->
+          <!-- Hero Title -->
+          <!-- <h1>The Most
+            <span data-typer-targets="Easy,Effective,Advanced,Secure,Friendly,Simple">Simple</span> and
+            <strong>Powerful Way</strong>
+            <br> to
+            <strong>launch</strong> your AI project</h1> -->
+          <!-- Mailchimp Subscribe form -->
+          <!-- <div class="row">
+            <div class="col-md-12">
+              <img id="homa-page-image" src="images/web-app-banner.png" alt="Web App Banner" class="img-responsive" style="width: 95%;">
+            </div>
+          </div> -->
+          <!-- // Mailchimp Subscribe form Ends -->
+
+        <!-- </div>
+      </main> -->
+      <!-- // Parallax Header Ends -->
+      <!-- Container -->
+      <!-- <div class="container" id="explore">
+        <div class="section-title">
+          <h2>Responsive platform for material and chemical researchers</h2>
+          <h4>Simple, elegant and intutive user interface</h4>
+        </div>
+        <section class="row heroimg breath">
+          <div class="col-md-12 text-center">
+            <img src="images/flat-mockup-template.png" alt="flat-mockup-template">
+          </div>
+        </section>
+
+        <div class="section-title">
+          <h2>Some great features of our material and chemical researchers</h2>
+          <h4>With our advanced features, you'll fall in love with</h4>
+        </div>
+        <section class="row features">
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="images/flat-feature-icon-1.svg" alt="analytics-icon">
+              <div class="caption">
+                <h3>Advanced analytics</h3>
+                <p>Browse and analyze detailed statistics of your experimental data. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="images/flat-feature-icon-2.svg" alt="analytics-icon">
+              <div class="caption">
+                <h3>Data encryption</h3>
+                <p>Allow researchers to keep original creativity and know-how. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="images/flat-feature-icon-3.svg" alt="analytics-icon">
+              <div class="caption">
+                <h3>Work with pc or mac</h3>
+                <p>You can even work on your mac with our Mac application and stay synced online. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+              <img src="images/flat-feature-icon-4.svg" alt="analytics-icon">
+              <div class="caption">
+                <h3>Dedicated support</h3>
+                <p>Talk to human. when ever you need a help or want to talk with us, we are open 24/7. </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="section-title">
+          <h2>You are in a good company</h2>
+          <h4>We are funded with world's trusted brands. </h4>
+        </div>
+        <section class="row clientlogo breath">
+          <div class="col-md-12 text-center">
+            <img src="images/client-logos.png" alt="client-logos">
+          </div>
+        </section>
+      </div> -->
+      <!-- // Container Ends -->
+
+      <!-- Grey Highlight Section -->
+      <!-- <div class="highlight testimonials pd-b-10">
+        <div class="container">
+          <div class="section-title pd-t-20">
+            <h2>What our customers said</h2>
+            <h4>Don't take our word. See our testimonials </h4>
+          </div>
+          <section class="row breath">
+            <div class="col-md-6">
+              <div class="testblock">Annswer, an awesome platform with impeccable features, easy customization with SPA is worthy of recommendation. This easy-to-use neural network truly made my day.</div>
+              <div class="clientblock">
+                <img src="images/customer-img-4.png" alt=".">
+                <p>
+                  <strong>Dr. Chiu, K. C.</strong>
+                  <br> Founder and CEO of
+                  <a href="#">Annswer</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="testblock">I like this platform very much. It's easy customization and perfect support. This is the finest startup application I've ever seen. It's responsive to have the maximum value.</div>
+              <div class="clientblock">
+                <img src="images/customer-img-3.png" alt=".">
+                <p>
+                  <strong>Benjamin Chang</strong>
+                  <br> Project Lead at
+                  <a href="https://annswer.org/">annswer.org</a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div> -->
+      <!-- // End Grey Highlight Section -->
+
+      <!-- Container -->
+      <!-- <div class="container">
+        <div class="section-title">
+          <h2>Honest pricing. No surprises.</h2>
+          <h4>No contract. No risk. No credit card required. </h4>
+        </div>
+        <section class="row breath planpricing">
+          <div class="col-md-4">
+            <div class="pricing color1">
+              <div class="planname">Personal</div>
+              <div class="price">
+                <span class="curr">$</span>----
+                <span class="per">/MO</span>
+              </div>
+              <div class="billing">Billed Annually</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing color2">
+              <div class="planname">Agency</div>
+              <div class="price">
+                <span class="curr">$</span>----
+                <span class="per">/MO</span>
+              </div>
+              <div class="billing">Billed Annually</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="pricing color3">
+              <div class="planname">Enterprise</div>
+              <div class="price">
+                <span class="curr">$</span>----
+                <span class="per">/MO</span>
+              </div>
+              <div class="billing">Billed Annually</div>
+            </div>
+          </div>
+        </section>
+        <div class="section-title">
+          <h5>Frequently Asked Questions</h5>
+        </div>
+        <section class="row faq breath">
+          <div class="col-md-6">
+            <h6>How does the free trial work?</h6>
+            <p>Our 10 day trial is 100% free and does not require credit card information to start. If at the end of your trial
+              you would like to upgrade, great. If not, you can cancel your account altogether, or let us mark it as inactive
+              for you to come back to later.</p>
+            <h6>Can I switch plans later?</h6>
+            <p>Absolutely. You can switch between our paid plans, or cancel your account altogether, whenever you like. We will
+              adjust any payments accordingly.</p>
+          </div>
+          <div class="col-md-6">
+            <h6>Do I need to choose a plan now?</h6>
+            <p>No. You get the full featured, unlimited version of Startup completely free for 10 days. Once you're ready to upgrade,
+              you may choose a plan which suits your needs.</p>
+            <h6>What payment types do you accept?</h6>
+            <p>We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you
+              do not need to supply card details to start your free trial.</p>
+          </div>
+        </section>
+      </div> -->
+      <!-- // Container Ends -->
+
+      <!-- slider -->
+      <!-- LOAD JQUERY LIBRARY -->
+      <!--<script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>-->
+      <!-- LOADING FONTS AND ICONS -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" property="stylesheet" type="text/css" media="all" />
+      <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+      <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/fonts/font-awesome/css/font-awesome.min.css">
+      <!-- REVOLUTION STYLE SHEETS -->
+      <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/settings.css">
+      <!-- REVOLUTION LAYERS STYLES -->
+      <!-- <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/layers.css"> -->
+
+      <!-- REVOLUTION NAVIGATION STYLES -->
+      <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/navigation.css">
+
+      <!-- <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/assets/css/noneed.css"> -->
+      <section class="example" style="width:99.5%;">
+        <article class="content">
+            <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="facebook-feed8" style="margin:0px auto;background-color:#dddddd;padding:0px;margin-top:0px;margin-bottom:0px;">
+                <!-- START REVOLUTION SLIDER 5.0.7 auto mode -->
+                <div id="rev_slider_8_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+                    <ul>
+                        <!-- SLIDE  -->
+                        <li data-index="rs-28" data-transition="scaledownfromleft" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="1500" data-thumb="//annswer.org/lib/revolution/assets/images/photography9-320x160.jpg" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Umbrella" data-param1="September 7, 2015" data-param2="Alfon Much" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/assets/images/dummy.png" alt="" width="1920" height="1080" 
+                            data-lazyload="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/2021/0105/20210105.1716.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+                        </li>
+                        <!-- SLIDE  -->
+                        <li data-index="rs-303" data-transition="scaledownfromleft" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="1500" data-thumb="//annswer.org/lib/revolution/assets/images/photography6-320x160.jpg" data-rotate="0" data-saveperformance="off" data-title="The Dreaming Girl" data-param1="September 6, 2015" data-param2="Lol" data-description="">
+                            <!-- MAIN IMAGE -->
+                            <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/assets/images/dummy.png" alt="" width="1920" height="1080" 
+                            data-lazyload="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/2021/0105/20210105.1719.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                            <!-- LAYERS -->
+                        </li>
+                    </ul>
+                    <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+                </div>
+            </div>
+            <!-- END REVOLUTION SLIDER -->
+        </article>
+      </section>
+      <main id="labview360_intro_bg" class="masthead" role="main" style="
+      background-image:''; 
+      background-color: #000000;
+      position: relative;
+      padding: 80px 15px;
+      color: #FFF;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover; display: none;">
+
+      <!-- Parallax Footer Starts -->
+      <main class="footercta" role="main">
+        <div class="container">
+
+          <!-- Hero Title -->
+          <h1 style="font-family: Microsoft YaHei; line-height: 88px;">導入AI人工智慧數位轉型<br>最佳實踐平台</h1>
+          <!-- Mailchimp Subscribe form -->
+          <div class="row">
+            <div class="col-md-12 breath text-center" style="font-family: Microsoft YaHei;">
+              <a href="./machinelearning/" class="btn btn-success btn-lg gototop">前往使用</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- // Parallax Footer Ends -->
+      <!-- ================= -->
+      <div class="br-pagebody mg-t-5 pd-x-30">
+        
+
+      </div><!-- br-pagebody -->
+      <footer class="br-footer">
+        <div class="footer-left">
+          <div class="mg-b-2">Copyright &copy; 2021. Annswer. All Rights Reserved.</div>
+          <div>Attentively and carefully made by Annswer Group. (V0.2)</div>
+        </div>
+        <div class="footer-right d-flex align-items-center">
+          <span class="tx-uppercase mg-r-10">Share:</span>
+          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/annswerorg"><i class="fa fa-facebook tx-20"></i></a>
+          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/annswerorg"><i class="fa fa-twitter tx-20"></i></a>
+        </div>
+      </footer>
+    </div>
+    <!-- ########## END: MAIN PANEL ########## -->
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/moment/moment.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/peity/jquery.peity.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/chartist/chartist.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/d3/d3.js"></script>
+    <!-- <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/rickshaw/rickshaw.min.js"></script> -->
+
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/js/annswer.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/js/ResizeSensor.js"></script>
+    <!-- <script src="./js/dashboard.js"></script> -->
+    <script>
+      $(function(){
+        'use strict'
+
+        // FOR DEMO ONLY
+        // menu collapsed by default during first page load or refresh with screen
+        // having a size between 992px and 1299px. This is intended on this page only
+        // for better viewing of widgets demo.
+        $(window).resize(function(){
+          minimizeMenu();
+        });
+
+        // minimizeMenu();
+
+        function minimizeMenu() {
+          if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+            // show only the icons and hide left menu label by default
+            $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+            $('body').addClass('collapsed-menu');
+            $('.show-sub + .br-menu-sub').slideUp();
+          } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+            $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+            $('body').removeClass('collapsed-menu');
+            $('.show-sub + .br-menu-sub').slideDown();
+          }
+        }
+      });
+    </script>
+
+    
+    <!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript">
+        var tpj = jQuery;
+
+        var revapi8;
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_8_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_8_1");
+            } else {
+                revapi8 = tpj("#rev_slider_8_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "//annswer.org/lib/revolution/js/",
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "on",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "uranus",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "uranus",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 20,
+                            v_offset: 30,
+                            space: 5,
+                            tmp: '<span class="tp-bullet-inner"></span>'
+                        }
+                    },
+                    gridwidth: 900,
+                    gridheight: 400,
+                    lazyType: "single",
+                    shadow: 0,
+                    spinner: "off",
+                    // stopLoop: "on",
+                    // stopAfterLoops: 0,
+                    // stopAtSlide: 1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@themepixels">
+    <meta name="twitter:creator" content="@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Annswer">
+    <meta name="twitter:description" content="Annswer Platform">
+    <meta name="twitter:image" content="//annswer.org/img/social.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="//annswer.org">
+    <meta property="og:title" content="Annswer">
+    <meta property="og:description" content="Annswer Platform">
+
+    <meta property="og:image" content="//annswer.org/img/social.png">
+    <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Annswer Platform">
+    <meta name="author" content="Annswer Group">
+
+    <title>Annswer - Artificial Neural Network Platform</title>
+
+    <!-- vendor css -->
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/chartist/chartist.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+  </head>
+
+  <body>
+
+    <!-- ########## START: LEFT PANEL ########## -->
+    {% include 'left_panel.html' %} 
+    
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="br-header">
+      <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+        {% include 'header-middle.html' %}
+        <div class="input-group hidden-xs-down wd-170 transition" style="visibility: hidden;">
+          <input id="searchbox" type="text" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+          </span>
+        </div><!-- input-group -->
+      </div><!-- br-header-left -->
+      <div class="br-header-right">
+        <nav class="nav" style="visibility: hidden;">
+          <div class="dropdown">
+            <a href="" class="nav-link pd-x-7 pos-relative" data-toggle="dropdown">
+              <i class="icon ion-ios-email-outline tx-24"></i>
+              <!-- start: if statement -->
+              <span class="square-8 bg-danger pos-absolute t-15 r-0 rounded-circle"></span>
+              <!-- end: if statement -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+              <div class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+                <label class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Messages</label>
+                <a href="" class="tx-11">+ Add New Message</a>
+              </div><!-- d-flex -->
+
+              <div class="media-list">
+                <!-- loop starts here -->
+                <a href="" class="media-list-link">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Donna Seay</p>
+                        <span class="tx-11 tx-gray-500">2 minutes ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring.</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <!-- loop ends here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Samantha Francis</p>
+                        <span class="tx-11 tx-gray-500">3 hours ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">My entire soul, like these sweet mornings of spring.</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Robert Walker</p>
+                        <span class="tx-11 tx-gray-500">5 hours ago</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">I should be incapable of drawing a single stroke at the present moment...</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <div class="d-flex align-items-center justify-content-between mg-b-5">
+                        <p class="mg-b-0 tx-medium tx-gray-800 tx-14">Larry Smith</p>
+                        <span class="tx-11 tx-gray-500">Yesterday</span>
+                      </div><!-- d-flex -->
+                      <p class="tx-12 mg-b-0">When, while the lovely valley teems with vapour around me, and the meridian sun strikes...</p>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <div class="pd-y-10 tx-center bd-t">
+                  <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i> Show All Messages</a>
+                </div>
+              </div><!-- media-list -->
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+          <div class="dropdown">
+            <a href="" class="nav-link pd-x-7 pos-relative" data-toggle="dropdown">
+              <i class="icon ion-ios-bell-outline tx-24"></i>
+              <!-- start: if statement -->
+              <span class="square-8 bg-danger pos-absolute t-15 r-5 rounded-circle"></span>
+              <!-- end: if statement -->
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-300 pd-0-force">
+              <div class="d-flex align-items-center justify-content-between pd-y-10 pd-x-20 bd-b bd-gray-200">
+                <label class="tx-12 tx-info tx-uppercase tx-semibold tx-spacing-2 mg-b-0">Notifications</label>
+                <a href="" class="tx-11">Mark All as Read</a>
+              </div><!-- d-flex -->
+
+              <div class="media-list">
+                <!-- loop starts here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Suzzeth Bungaos</strong> tagged you and 18 others in a post.</p>
+                      <span class="tx-12">October 03, 2017 8:45am</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <!-- loop ends here -->
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Mellisa Brown</strong> appreciated your work <strong class="tx-medium tx-gray-800">The Social Network</strong></p>
+                      <span class="tx-12">October 02, 2017 12:44am</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700">20+ new items added are for sale in your <strong class="tx-medium tx-gray-800">Sale Group</strong></p>
+                      <span class="tx-12">October 01, 2017 10:20pm</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <a href="" class="media-list-link read">
+                  <div class="media pd-x-20 pd-y-15">
+                    <img src="//via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    <div class="media-body">
+                      <p class="tx-13 mg-b-0 tx-gray-700"><strong class="tx-medium tx-gray-800">Julius Erving</strong> wants to connect with you on your conversation with <strong class="tx-medium tx-gray-800">Ronnie Mara</strong></p>
+                      <span class="tx-12">October 01, 2017 6:08pm</span>
+                    </div>
+                  </div><!-- media -->
+                </a>
+                <div class="pd-y-10 tx-center bd-t">
+                  <a href="" class="tx-12"><i class="fa fa-angle-down mg-r-5"></i> Show All Notifications</a>
+                </div>
+              </div><!-- media-list -->
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+          <div class="dropdown">
+            <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name hidden-md-down">Katherine</span>
+              <img src="//via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
+              <span class="square-10 bg-success"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
+                <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
+                <li><a href=""><i class="icon ion-ios-download"></i> Downloads</a></li>
+                <li><a href=""><i class="icon ion-ios-star"></i> Favorites</a></li>
+                <li><a href=""><i class="icon ion-ios-folder"></i> Collections</a></li>
+                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+        <div class="navicon-right">
+          <a id="btnRightMenu" href="" class="pos-relative">
+            <i class="icon ion-ios-chatboxes-outline"></i>
+            <!-- start: if statement -->
+            <span class="square-8 bg-danger pos-absolute t-10 r--5 rounded-circle" style="visibility: hidden;"></span>
+            <!-- end: if statement -->
+          </a>
+        </div><!-- navicon-right -->
+      </div><!-- br-header-right -->
+    </div><!-- br-header -->
+    <!-- ########## END: HEAD PANEL ########## -->
+
+    <!-- ########## START: RIGHT PANEL ########## -->
+    {% include 'right_panel.html' %}
+    <!-- ########## END: RIGHT PANEL ########## --->
+    
+    <!-- ########## START: MAIN PANEL ########## -->
+    <div class="br-mainpanel">
+      <div class="pd-30" style="padding-bottom: 10px;">
+        <h4 class="tx-gray-800 mg-b-5">關於我們</h4>
+        <!-- <p class="mg-b-0">這裡正加緊趕工中...</p> -->
+      </div><!-- d-flex -->
+      <div class="br-pagebody mg-t-5 pd-x-30">
+        <div class="row row-sm mg-t-20">
+          <div class="col-12">
+            <div class="card shadow-base card-body pd-25 bd-0 tx-16">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h6 class="card-title tx-uppercase tx-12"></h6>
+                  人類跟其他生物的一個最大不同點在於，人類運透過語言、文字，將知識一代一代傳承下去。
+                  生命有終點，但知識可以延續。Annswer很樂意成為知識交流的媒介，提供知識交流的平台，
+                  讓更多知識火花在Annswer誕生、保存、交流。<br><br>
+                  Annswer是一個機器學習平台，透過這個平台，
+                  各個行業將可利用機器學習，得到最佳的製程參數、預測
+                  電子商務的假期流量，或預測農作物的收成，以在市場上
+                  獲得競爭力。<br><br>
+                  我們希望知識與AI工具的普及，能不受限於種族、地域、貧富。只要是人類，理應都能
+                  享受知識、科技所帶來的便利與美好生活。同樣地，Annswer機器學習平台
+                  希望能打破知識的疆界!!! 讓不懂程式語言的人，透過Annswer，就能
+                  輕鬆操作機器學習工具，並用於學術、工業、生產、社會福利...等領域上。<br><br>
+                  歡迎您使用Annswer的討論區，與其他使用者互動，針對科學、資訊科技、AI演算法等議題
+                  進行知識分享交流。相信透過知識分享激盪火花，可以讓世界變得更好。
+                  
+
+                </div><!-- col-6 -->
+                <div class="col-sm-6">
+                  <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/rice-hands.png" style="width: 100%; margin-top: -15px; ">
+                </div>
+                
+              </div><!-- row -->
+            </div><!-- card -->
+          </div><!-- col-9 -->
+          <!-- <div class="col-4">
+          </div> -->
+        </div><!-- row -->
+
+      </div><!-- br-pagebody -->
+      
+      <footer class="br-footer">
+        <div class="footer-left">
+          <div class="mg-b-2">Copyright &copy; 2021. Annswer. All Rights Reserved.</div>
+          <div>Attentively and carefully made by Annswer Group. (V0.2)</div>
+        </div>
+        <div class="footer-right d-flex align-items-center">
+          <span class="tx-uppercase mg-r-10">Share:</span>
+          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/annswerorg"><i class="fa fa-facebook tx-20"></i></a>
+          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/annswerorg"><i class="fa fa-twitter tx-20"></i></a>
+        </div>
+      </footer>
+    </div>
+    <!-- ########## END: MAIN PANEL ########## -->
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/moment/moment.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/peity/jquery.peity.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/chartist/chartist.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/d3/d3.js"></script>
+    <!-- <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/rickshaw/rickshaw.min.js"></script> -->
+
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/js/annswer.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/js/ResizeSensor.js"></script>
+    <!-- <script src="./js/dashboard.js"></script> -->
+    <script>
+      $(function(){
+        'use strict'
+
+        // FOR DEMO ONLY
+        // menu collapsed by default during first page load or refresh with screen
+        // having a size between 992px and 1299px. This is intended on this page only
+        // for better viewing of widgets demo.
+        $(window).resize(function(){
+          minimizeMenu();
+        });
+
+        // minimizeMenu();
+
+        function minimizeMenu() {
+          if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+            // show only the icons and hide left menu label by default
+            $('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+            $('body').addClass('collapsed-menu');
+            $('.show-sub + .br-menu-sub').slideUp();
+          } else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+            $('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+            $('body').removeClass('collapsed-menu');
+            $('.show-sub + .br-menu-sub').slideDown();
+          }
+        }
+      });
+    </script>
+
+    
+    <!-- REVOLUTION JS FILES -->
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript">
+        var tpj = jQuery;
+
+        var revapi8;
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_8_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_8_1");
+            } else {
+                revapi8 = tpj("#rev_slider_8_1").show().revolution({
+                    sliderType: "standard",
+                    jsFileLocation: "//annswer.org/lib/revolution/js/",
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {
+                        keyboardNavigation: "on",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "off",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 75,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        arrows: {
+                            style: "uranus",
+                            enable: true,
+                            hide_onmobile: false,
+                            hide_onleave: false,
+                            tmp: '',
+                            left: {
+                                h_align: "left",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            },
+                            right: {
+                                h_align: "right",
+                                v_align: "center",
+                                h_offset: 10,
+                                v_offset: 0
+                            }
+                        },
+                        bullets: {
+                            enable: true,
+                            hide_onmobile: false,
+                            style: "uranus",
+                            hide_onleave: false,
+                            direction: "horizontal",
+                            h_align: "center",
+                            v_align: "bottom",
+                            h_offset: 20,
+                            v_offset: 30,
+                            space: 5,
+                            tmp: '<span class="tp-bullet-inner"></span>'
+                        }
+                    },
+                    gridwidth: 900,
+                    gridheight: 400,
+                    lazyType: "single",
+                    shadow: 0,
+                    spinner: "off",
+                    // stopLoop: "on",
+                    // stopAfterLoops: 0,
+                    // stopAtSlide: 1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+    </script>
+
+  </body>
+</html>
+    

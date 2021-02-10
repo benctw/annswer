@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Twitter -->
+    <meta name="twitter:site" content="@themepixels">
+    <meta name="twitter:creator" content="@themepixels">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Annswer">
+    <meta name="twitter:description" content="Annswer Platform">
+    <meta name="twitter:image" content="//annswer.org/img/social.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="//annswer.org">
+    <meta property="og:title" content="Annswer">
+    <meta property="og:description" content="Annswer Platform">
+
+    <meta property="og:image" content="//annswer.org/img/social.png">
+    <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+
+    <!-- Meta -->
+    <meta name="description" content="Annswer Platform">
+    <meta name="author" content="Annswer Group">
+
+    <title>Annswer - Artificial Neural Network Platform</title>
+
+    <!-- vendor css -->
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/css/select2.min.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+  </head>
+
+  <body>
+
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+      <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-white rounded shadow-base" >
+      <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/error.png" width="100%">
+      <br>
+      <div style="font-family: Microsoft JhengHei;">
+      {% if errorcode==460600 %}請先登入
+      {% elif errorcode==460762 %}請先完成電郵確認，如果沒收到電郵確認信，或許您可以到「垃圾信箱」找找!
+      {% elif errorcode==460763 %}這個使用者名稱已經有人使用過了，請回到上頁重新輸入!
+      {% elif errorcode==460764 %}這個email帳號已經有人使用過了，請回到上頁重新輸入!
+      {% elif errorcode==460765 %}查無此帳號!<br><br><button type='submit' class='btn btn-info btn-block' onclick="location.href='/signup'">Register</button>
+      {% elif errorcode==460766 %}密碼錯誤!
+      {% elif errorcode==460767 %}您已經完成註冊確認過了~ 不用再次確認!
+      {% elif errorcode==460768 %}您的註冊確認碼錯誤!
+      {% elif errorcode==460769 %}電郵寄送失敗!
+      {% elif errorcode==460770 %}驗證碼不符!
+      {% elif errorcode==460771 %}密碼長度不能為0!
+      {% elif errorcode==460772 %}兩次密碼不相符!
+      {% elif errorcode==460773 %}請輸入電子郵件帳號!
+      {% elif errorcode==460774 %}請輸入使用者名稱!
+      {% elif errorcode==460775 %}密碼長度至少8碼!
+      {% elif errorcode==460776 %}使用者名稱至少3個字元!
+      {% elif errorcode==460777 %}使用者名稱只能有英文字母、數字!
+      {% elif errorcode==460778 %}使用者名稱必須以字母或數字結尾!
+      {% elif errorcode==460779 %}使用者名稱必須不包括連續的 2 個或更多的特殊字元!
+      {% elif errorcode==460780 %}使用者名稱最長為20個字元!
+      {% elif errorcode==460781 %}不可使用保留字作為使用者名稱!
+      {% elif errorcode==460782 %}沒有這個Email地址!
+      {% elif errorcode==460783 %}請輸入舊的電子郵件帳號!
+      {% elif errorcode==460784 %}請輸入新的電子郵件帳號!
+      {% elif errorcode==460785 %}請輸入密碼!
+      {% elif errorcode==460786 %}這個新的email帳號已經有人使用過了，請回到上頁重新輸入!
+      {% elif errorcode==460787 %}這個新的email帳號已經有人，請重新設定新email帳號!
+      {% elif errorcode==460801 %}為了確保帳戶安全，請重新設定密碼!<br><br><button type='submit' class='btn btn-info btn-block' onclick="location.href='/resetpw'">重設密碼</button>
+      {% elif errorcode==470000 %}資料庫連線失敗!
+      {% elif errorcode==470001 %}資料庫寫入錯誤!
+      {% elif errorcode==471001 %}參數錯誤(471001)
+      {% elif errorcode==471002 %}參數錯誤(471002)
+      {% elif errorcode==471003 %}參數錯誤(471003)
+      {% elif errorcode==471004 %}參數錯誤(471004)
+      {% elif errorcode==471005 %}參數錯誤(471005)
+      {% elif errorcode==481001 %}請插入正確的雙因素認證金鑰
+      {% elif errorcode==481002 %}雙因素認證金鑰錯誤
+      {% elif errorcode==481003 %}雙因素認證金鑰不支援此瀏覽器
+      {% elif errorcode==999999 %}未知的錯誤!
+      {% endif %}
+      </div>
+      </div>
+      <br>
+        <button type="submit" class="btn btn-info btn-block" onclick="location.href='{{g.parseResult.scheme}}://{{g.parseResult.netloc}}';">Back to Home</button>
+      </div><!-- login-wrapper -->
+    </div><!-- d-flex -->
+
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+    <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/js/select2.min.js"></script>
+    <script>
+      $(function(){
+        'use strict';
+
+        $('.select2').select2({
+          minimumResultsForSearch: Infinity
+        });
+      });
+    </script>
+
+  </body>
+</html>

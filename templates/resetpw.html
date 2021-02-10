@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@themepixels">
+  <meta name="twitter:creator" content="@themepixels">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Annswer">
+  <meta name="twitter:description" content="Annswer Platform">
+  <meta name="twitter:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="//annswer.org">
+  <meta property="og:title" content="Annswer">
+  <meta property="og:description" content="Annswer Platform">
+
+  <meta property="og:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:secure_url"
+    content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="600">
+
+  <!-- Meta -->
+  <meta name="description" content="Annswer Platform">
+  <meta name="author" content="Annswer Group">
+
+  <title>Annswer - Artificial Neural Network Platform</title>
+
+  <!-- vendor css -->
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css"
+    rel="stylesheet">
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/Ionicons/css/ionicons.css"
+    rel="stylesheet">
+  <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/css/select2.min.css"
+    rel="stylesheet">
+
+  <!-- Bracket CSS -->
+  <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
+</head>
+
+<body>
+
+  <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+    {% if email|length>0 %}
+    <form method="post" name="reset_pw" action="/resetpw/{{email}}/{{resetpwcode}}">
+      {% else %}
+      <form method="post" name="reset_pw" action="/resetpw">
+        {% endif %}
+        <div class="login-wrapper wd-300 wd-xs-400 pd-25 pd-xs-40 bg-white rounded shadow-base">
+          <div class="signin-logo tx-center tx-28 tx-bold tx-inverse">
+            <a href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}">
+              <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/annswer_logo.svg" width="90%">
+            </a>
+          </div>
+          <!-- <div class="tx-center mg-b-40">The Admin Template For Perfectionist</div> -->
+          <br>
+          <div class="form-group">
+            <label class="form-control-label">電子郵件信箱 (您的登入帳號): <span class="tx-danger">*</span></label>
+            {% if email|length>0 %}
+            <input name="email" id="email" type="text" class="form-control" value="{{email}}" readonly="readonly">
+            <input name="resetpwcode" id="resetpwcode" type="hidden" value="{{resetpwcode}}">
+            <label class="form-control-label">請輸入密碼: <span class="tx-danger">*</span></label>
+            <input name="password1" id="password1" type="password" class="form-control" placeholder="請輸入密碼">
+            <label class="form-control-label">請再次輸入密碼: <span class="tx-danger">*</span></label>
+            <input name="password2" id="password2" type="password" class="form-control" placeholder="請再次輸入密碼">
+            {% else %}
+            <input name="email" id="email" type="text" class="form-control" placeholder="請輸入電郵email，系統將寄信給您，重設密碼">
+            {% endif %}
+          </div><!-- form-group -->
+          <button type="submit" class="btn btn-info btn-block" style="margin-top: 60px;">重設密碼</button>
+
+          <div class="mg-t-40 tx-center">已經有會員資格了嗎? <a href="/signin" class="tx-info">登入</a></div>
+        </div><!-- login-wrapper -->
+      </form>
+  </div><!-- d-flex -->
+
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/popper.js/popper.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/bootstrap/bootstrap.js"></script>
+  <script src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/select2/js/select2.min.js"></script>
+  <script>
+    $(function () {
+      'use strict';
+
+      $('.select2').select2({
+        minimumResultsForSearch: Infinity
+      });
+    });
+  </script>
+
+</body>
+
+</html>

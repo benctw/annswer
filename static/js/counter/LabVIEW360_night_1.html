@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://dl.dropboxusercontent.com/u/3813488/cd/cd-g0vccsphackathon.html -->
+<html lang="zh-TW"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>22 小時 5 分鐘</title>
+  <meta http-equiv="refresh" content="300"> <!-- Memory-leak work-around -->
+  <meta property="og:title" content="LDAV 2014">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dl.dropboxusercontent.com/u/3813488/cd/cd-g0vccsphackathon.html">
+  <meta property="og:image" content="https://dl.dropboxusercontent.com/u/3813488/cd/hackathon.gif">
+</head>
+<body class="is-timeup">
+  <style>
+    body{
+      background-color: #000;
+      font: 60px/1.5 "HiraMinProN-W6", serif;
+      color: #e95d0f;
+    }
+
+    body.is-timeup{
+      color: #f33;
+    }
+    .placeholder{
+      position: absolute;
+      width: 1000px;
+      height: 175px;
+
+      left: 50%;
+      margin-left: -500px;
+      margin-top: 1em;
+    }
+    p{
+      margin: 0;
+      text-align: center
+    }
+    hr{
+      border-color: #e95d0f;
+      margin: 0.25em 0;
+    }
+    .normal-only, .timeup-only{
+      font-size: 135px;
+      /*letter-spacing:10px;*/
+    }
+
+    .is-timeup hr{
+      border-color: #f33;
+    }
+
+    .is-timeup .normal-only, .timeup-only{
+      display: none;
+    }
+    .is-timeup .timeup-only{
+      display: block;
+    }
+
+    #display{
+      margin-top: 30px;
+    }
+
+
+  </style>
+
+  <div class="placeholder">
+    <p><span id="now">2014 年 5 月 11 日 下午 4:05:58</span></p>
+    <p class="normal-only">主題之夜</p>
+    <p class="timeup-only">360主題之夜</p>
+    <hr>
+    <canvas id="display" width="1000" height="160">
+
+    </canvas>
+  </div>
+  <script src="counter.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    if(typeof requestAnimationFrame === 'undefined'){
+      requestAnimationFrame = function(cb){
+        setInterval(cb, 50);
+      };
+    }
+
+    var body = document.body;
+    var timesup = false;
+    var TARGET = new Date(2014, 9, 14, 20, 0, 0);
+
+    var display = new SegmentDisplay("display");
+    // display.pattern         = "###     ## : ## : ## . ###";
+    display.pattern         = "## : ## : ## . ###";
+    display.displayAngle    = 4;
+    display.digitHeight     = 350;
+    display.digitWidth      = 150;
+    display.digitDistance   = 30;
+    display.segmentWidth    = 30;
+    display.segmentDistance = 8;
+    display.segmentCount    = 7;
+    display.cornerType      = 3;
+    display.colorOn         = "#e95d0f";
+    display.colorOff        = "#220e02";
+    display.draw();
+
+    var units = countdown.HOURS |
+                countdown.MINUTES |
+                countdown.SECONDS |
+                countdown.MILLISECONDS;
+
+    var padTo2 = function(num){
+      return ("0" + num).slice(-2);
+    };
+
+    var padTo3 = function(num){
+      return ("00" + num).slice(-3);
+    };
+
+    var update = function(){
+
+      var now = new Date();
+      var dateString = now.toLocaleString('zh-TW');
+      // Remove [GMT +8] in iPad 1
+      dateString = dateString.replace(/\[.+\]/, '');
+      document.getElementById('now').innerHTML = insertSpace(dateString);
+
+      var timespan = countdown(now, TARGET, units);
+
+      display.setValue(padTo2(timespan.hours) + ' : ' + padTo2(timespan.minutes) + ' : ' + padTo2(timespan.seconds) + ' . ' + padTo3(timespan.milliseconds));
+
+      var title = ""
+
+      if(timespan.value<0 && !timesup){
+        // Times up
+        timesup = true;
+        display.colorOn = "#ff0000";
+        body.classList.add('is-timeup');
+        title += "逾時 "
+      }
+
+      document.title = title + timespan.hours + " 小時 " + timespan.minutes + " 分鐘";
+
+      requestAnimationFrame(update);
+    };
+
+    update();
+  </script>
+  <!-- http://gag1gag.com/view.php?pid=7143 -->
+
+</body></html>
