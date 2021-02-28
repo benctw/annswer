@@ -49,6 +49,7 @@ def login(email=None, password=None, userid=None, loginkey=None, sso=None, sig=N
             elif (data['activated'] == 0):
                 new_user_activate_link = g.parseResult.scheme+'://'+g.parseResult.netloc+'/signup/'+email+'/'+data['activate_code']
                 try:
+                    mail = SendGrid(app)
                     mail.send_email(
                         from_email=ac.sendGrid['strSenderEmailAddress'],
                         to_email=data['email'],
@@ -150,6 +151,7 @@ def signup():
             g.conn.commit()
             new_user_activate_link = g.parseResult.scheme+'://'+g.parseResult.netloc+'/signup/'+email+'/'+activate_code
             try:
+                mail = SendGrid(app)
                 mail.send_email(
                     from_email=ac.sendGrid['strSenderEmailAddress'],
                     to_email=email,
@@ -231,8 +233,8 @@ def resetpw_action(email=None, resetpwcode=None, password1=None, password2=None)
                 return redirect(url_for('page_error', errorcode=470001))
             else:
                 g.conn.commit()
-        # send multiple recipients; backwards compatible with Flask-Mandrill
-        mail.send_email(
+            mail = SendGrid(app)
+            mail.send_email(
             from_email='info@annswer.com',
             to_email=email,
             subject='Reset password',
@@ -250,7 +252,6 @@ app = Flask(__name__,
 app.config.from_object(__name__)
 app.config['SENDGRID_API_KEY'] = ac.sendGrid['strApiKey']
 app.config['SENDGRID_DEFAULT_FROM'] = ac.sendGrid['strSenderEmailAddress']
-mail = SendGrid(app)
 
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
