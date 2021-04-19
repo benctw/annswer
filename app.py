@@ -1,7 +1,7 @@
 # pip install Flask pymysql bcrypt flask_sendgrid pydiscourse
 from flask import Flask, jsonify, request, render_template, g, make_response, redirect, url_for, json
 from flask_cors import CORS
-import sys, os, random, bcrypt, time, re, pymysql, logging
+import sys, os, random, bcrypt, time, re, pymysql, logging, datetime
 from urllib import parse
 import app_config as ac
 from flask_sendgrid import SendGrid
@@ -12,6 +12,16 @@ from logging import FileHandler
 
 # configuration
 DEBUG = False
+
+def menu_link_active():
+    dict_menu_link_active={}
+    # if g.userdata:
+    if 'userdate' in g:
+        dict_menu_link_active['user_service']=bool(max([int(x in g.parseResult.path.lower()) for x in ('/profile', '/change_email')]))
+    else:
+        dict_menu_link_active['user_service']=bool(max([int(x in g.parseResult.path.lower()) for x in ('/signin', '/signup')]))
+    dict_menu_link_active['data']=bool(max([int(x in g.parseResult.path.lower()) for x in ('/data', '/databrowser')]))
+    return dict_menu_link_active
 
 def getRootPath():
     try:
@@ -181,7 +191,7 @@ def activat_check_code(email=None, activatecode=None):
             g.conn.commit()
             if ac.discourseForumConfig['blnActivate']:
                 discoursepassword = generateRandomString(24)
-                discourseuser = g.discourseclient.create_user('', data['username'], email, discoursepassword, active='true')
+                discourseuser = g.discourseClient.create_user('', data['username'], email, discoursepassword, active='true')
                 if discourseuser:
                     sql_update = f"UPDATE user SET `forum_password`='{discoursepassword}', forum_userid={discourseuser['user_id']}  WHERE email='{email}' and activate_code='{activatecode}'"
                     cursor.execute(sql_update)
@@ -256,6 +266,14 @@ app.config['SENDGRID_DEFAULT_FROM'] = ac.sendGrid['strSenderEmailAddress']
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
+@app.template_filter('formatdatetime')
+def format_datetime(value, format="%Y/%m/%d %H:%M:%S"):
+    """Format a date time to (Default): d Mon YYYY HH:MM P"""
+    offset = time.timezone if (time.localtime().tm_isdst == 0) else time.altzone
+    if value is None:
+        return ""       
+    return datetime.datetime.fromtimestamp(datetime.datetime.fromisoformat(value[:-1]).timestamp()-offset).strftime(format)
+
 @app.before_request
 def before():
     g.internalUserDataFromDbId = 0
@@ -279,7 +297,8 @@ def before():
     g.conn = conn
     # g.cursor = cursor
     if ac.discourseForumConfig['blnActivate']:
-        g.discourseclient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='system', api_key=ac.discourseForumConfig['strSystemApiKey'])
+        g.discourseClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='system', api_key=ac.discourseForumConfig['strSystemApiKey'])
+    g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='benctw', api_key=ac.discourseForumConfig['strSystemApiKey'])
 
     # cursor = g.conn.cursor()
     try:
@@ -301,19 +320,23 @@ def before():
                         g.internalUserDataFromDbUserName = g.userdata["username"]
                         g.internalstrUserDataFromDbNameFirst = g.userdata["name_first"]
                         g.internalstrUserDataFromDbNameLast = g.userdata["name_last"]
+                        g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username=g.userdata['forum_userid'], api_key=ac.discourseForumConfig['strSystemApiKey'])
                     else:
                         resp = make_response(redirect(request.url))
                         resp.delete_cookie("UserId")
                         resp.delete_cookie("UserLoginKey")
+                        g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='benctw', api_key=ac.discourseForumConfig['strSystemApiKey'])
                         return resp
             except:
                 resp = make_response(redirect(request.url))
                 resp.delete_cookie("UserId")
                 resp.delete_cookie("UserLoginKey")
+                g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='benctw', api_key=ac.discourseForumConfig['strSystemApiKey'])
                 return resp
             finally:
                 pass
     except:
+        g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='benctw', api_key=ac.discourseForumConfig['strSystemApiKey'])
         pass
 
 @app.teardown_request
@@ -345,7 +368,13 @@ def handle_exception(e):
 
 @app.route('/')
 def page_index():
-    return render_template('index.html')
+    dictnews = g.discourseUserClient.latest_topics()
+    i=0
+    for item in dictnews['topic_list']['topics']:
+        dictnews['topic_list']['topics'][i]['last_posted_at_timestamp']=datetime.datetime.fromisoformat(dictnews['topic_list']['topics'][i]['last_posted_at'][:-1]).timestamp()
+        i+=1
+    # dictnews['topic_list']['topics'] = [x for x in dictnews['topic_list']['topics'] if x['id']!=517]
+    return render_template('index.html', menu_link_active = menu_link_active(), dictnews = dictnews)
 
 @app.route('/about')
 def page_about():
@@ -387,7 +416,7 @@ def _2fa():
 @app.route('/signout')
 def page_signout():
     if ac.discourseForumConfig['blnActivate']:
-        g.discourseclient.log_out(g.userdata['forum_userid'])
+        g.discourseClient.log_out(g.userdata['forum_userid'])
     resp = make_response(render_template('success.html', successcode=674957))
     resp.delete_cookie("UserId")
     resp.delete_cookie("UserLoginKey")

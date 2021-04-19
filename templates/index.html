@@ -467,6 +467,286 @@
             <!-- END REVOLUTION SLIDER -->
         </article>
       </section>
+
+      <div class="br-pagebody mg-t-5 pd-x-30">
+        <!-- <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              {% for item in dictnews['topic_list']['topics'] %}
+              {{ item['title'] }}<br>
+              {% endfor %}
+            </div>
+          </div>
+        </div> -->
+        <div class="row row-sm mg-t-20">
+          <div class="col-8">
+            <!-- <div class="card pd-0 bd-0 shadow-base">
+              <div class="pd-x-30 pd-t-30 pd-b-15">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div>
+                    <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Network Performance</h6>
+                    <p class="mg-b-0">Duis autem vel eum iriure dolor in hendrerit in vulputate...</p>
+                  </div>
+                  <div class="tx-13">
+                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-purple mg-r-10"></span> TCP Reset Packets</p>
+                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-pink mg-r-10"></span> TCP FIN Packets</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pd-x-15 pd-b-15">
+                <div id="ch1" class="br-chartist br-chartist-2 ht-200 ht-sm-300"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="182.14285714285714" x2="182.14285714285714" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="324.2857142857143" x2="324.2857142857143" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="466.42857142857144" x2="466.42857142857144" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="608.5714285714286" x2="608.5714285714286" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="750.7142857142857" x2="750.7142857142857" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="892.8571428571429" x2="892.8571428571429" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="1035" x2="1035" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line y1="270" y2="270" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="227.5" y2="227.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="185" y2="185" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="142.5" y2="142.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="100" y2="100" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="57.5" y2="57.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="40" x2="1035" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M40,270L40,227.5C87.381,216.167,134.762,193.5,182.143,193.5C229.524,193.5,276.905,210.5,324.286,210.5C371.667,210.5,419.048,202,466.429,202C513.81,202,561.19,220.7,608.571,227.5C655.952,234.3,703.333,244.5,750.714,244.5C798.095,244.5,845.476,227.5,892.857,227.5C940.238,227.5,987.619,233.167,1035,236L1035,270Z" class="ct-area"></path><path d="M40,227.5C87.381,216.167,134.762,193.5,182.143,193.5C229.524,193.5,276.905,210.5,324.286,210.5C371.667,210.5,419.048,202,466.429,202C513.81,202,561.19,220.7,608.571,227.5C655.952,234.3,703.333,244.5,750.714,244.5C798.095,244.5,845.476,227.5,892.857,227.5C940.238,227.5,987.619,233.167,1035,236" class="ct-line"></path><line x1="40" y1="227.5" x2="40.01" y2="227.5" class="ct-point" ct:value="5"></line><line x1="182.14285714285714" y1="193.5" x2="182.15285714285713" y2="193.5" class="ct-point" ct:value="9"></line><line x1="324.2857142857143" y1="210.5" x2="324.29571428571427" y2="210.5" class="ct-point" ct:value="7"></line><line x1="466.42857142857144" y1="202" x2="466.43857142857144" y2="202" class="ct-point" ct:value="8"></line><line x1="608.5714285714286" y1="227.5" x2="608.5814285714285" y2="227.5" class="ct-point" ct:value="5"></line><line x1="750.7142857142857" y1="244.5" x2="750.7242857142857" y2="244.5" class="ct-point" ct:value="3"></line><line x1="892.8571428571429" y1="227.5" x2="892.8671428571429" y2="227.5" class="ct-point" ct:value="5"></line><line x1="1035" y1="236" x2="1035.01" y2="236" class="ct-point" ct:value="4"></line></g><g class="ct-series ct-series-b"><path d="M40,270L40,185C87.381,170.833,134.762,142.5,182.143,142.5C229.524,142.5,276.905,185,324.286,185C371.667,185,419.048,125.5,466.429,125.5C513.81,125.5,561.19,202,608.571,202C655.952,202,703.333,187.125,750.714,176.5C798.095,165.875,845.476,134,892.857,134C940.238,134,987.619,168,1035,185L1035,270Z" class="ct-area"></path><path d="M40,185C87.381,170.833,134.762,142.5,182.143,142.5C229.524,142.5,276.905,185,324.286,185C371.667,185,419.048,125.5,466.429,125.5C513.81,125.5,561.19,202,608.571,202C655.952,202,703.333,187.125,750.714,176.5C798.095,165.875,845.476,134,892.857,134C940.238,134,987.619,168,1035,185" class="ct-line"></path><line x1="40" y1="185" x2="40.01" y2="185" class="ct-point" ct:value="10"></line><line x1="182.14285714285714" y1="142.5" x2="182.15285714285713" y2="142.5" class="ct-point" ct:value="15"></line><line x1="324.2857142857143" y1="185" x2="324.29571428571427" y2="185" class="ct-point" ct:value="10"></line><line x1="466.42857142857144" y1="125.5" x2="466.43857142857144" y2="125.5" class="ct-point" ct:value="17"></line><line x1="608.5714285714286" y1="202" x2="608.5814285714285" y2="202" class="ct-point" ct:value="8"></line><line x1="750.7142857142857" y1="176.5" x2="750.7242857142857" y2="176.5" class="ct-point" ct:value="11"></line><line x1="892.8571428571429" y1="134" x2="892.8671428571429" y2="134" class="ct-point" ct:value="16"></line><line x1="1035" y1="185" x2="1035.01" y2="185" class="ct-point" ct:value="10"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="275" width="142.14285714285714" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">1</span></foreignObject><foreignObject style="overflow: visible;" x="182.14285714285714" y="275" width="142.14285714285714" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">2</span></foreignObject><foreignObject style="overflow: visible;" x="324.2857142857143" y="275" width="142.14285714285717" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">3</span></foreignObject><foreignObject style="overflow: visible;" x="466.42857142857144" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">4</span></foreignObject><foreignObject style="overflow: visible;" x="608.5714285714286" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">5</span></foreignObject><foreignObject style="overflow: visible;" x="750.7142857142857" y="275" width="142.14285714285722" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">6</span></foreignObject><foreignObject style="overflow: visible;" x="892.8571428571429" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">7</span></foreignObject><foreignObject style="overflow: visible;" x="1035" y="275" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">8</span></foreignObject><foreignObject style="overflow: visible;" y="227.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="185" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">5</span></foreignObject><foreignObject style="overflow: visible;" y="142.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="100" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">15</span></foreignObject><foreignObject style="overflow: visible;" y="57.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">25</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">30</span></foreignObject></g></svg></div>
+              </div>
+            </div> -->
+  
+            <div class="card bd-0 shadow-base pd-30 mg-t-20">
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">討論區最新留言</h6>
+                  <!-- <p class="mg-b-0"><i class="icon ion-calendar mg-r-5"></i> From October 2017 - December 2017</p> -->
+                </div>
+                <!-- <a href="" class="btn btn-outline-info btn-oblong tx-11 tx-uppercase tx-mont tx-medium tx-spacing-1 pd-x-30 bd-2">See more</a> -->
+              </div>
+  
+              <table class="table table-valign-middle mg-b-0">
+                <tbody>
+                  {% for item in dictnews['topic_list']['topics'] %}
+                  <tr>
+                    <!-- <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td> -->
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">{{ item['title'] }}</h6>
+                      <!-- <span class="tx-12">@deborah.miner</span> -->
+                    </td>
+                    <td align="right">{{ item['last_posted_at']|formatdatetime }}</td>
+                    <!-- <td><span id="sparkline1"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td> -->
+                    <!-- <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td> -->
+                  </tr>
+                  {% endfor %}
+                  <!-- <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Deborah Miner</h6>
+                      <span class="tx-12">@deborah.miner</span>
+                    </td>
+                    <td>Nov 01, 2017</td>
+                    <td><span id="sparkline1"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Belinda Connor</h6>
+                      <span class="tx-12">@belinda.connor</span>
+                    </td>
+                    <td>Oct 28, 2017</td>
+                    <td><span id="sparkline2"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Andrew Wiggins</h6>
+                      <span class="tx-12">@andrew.wiggins</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline3"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Brandon Lawrence</h6>
+                      <span class="tx-12">@brandon.lawrence</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline4"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td class="pd-l-0-force">
+                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
+                    </td>
+                    <td>
+                      <h6 class="tx-inverse tx-14 mg-b-0">Marilyn Tarter</h6>
+                      <span class="tx-12">@marilyn.tarter</span>
+                    </td>
+                    <td>Oct 27, 2017</td>
+                    <td><span id="sparkline5"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
+                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+  
+            <!-- <div class="card shadow-base card-body pd-25 bd-0 mg-t-20">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h6 class="card-title tx-uppercase tx-12">Statistics Summary</h6>
+                  <p class="display-4 tx-medium tx-inverse mg-b-5 tx-lato">25%</p>
+                  <div class="progress mg-b-10">
+                    <div class="progress-bar bg-primary progress-bar-xs wd-30p" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p class="tx-12">Nulla consequat massa quis enim. Donec pede justo, fringilla vel...</p>
+                  <p class="tx-11 lh-3 mg-b-0">You can also use other progress variant found in <a href="progress.html" target="blank">progress section</a>.</p>
+                </div>
+                <div class="col-sm-6 mg-t-20 mg-sm-t-0 d-flex align-items-center justify-content-center">
+                  <span class="peity-donut" data-peity="{ &quot;fill&quot;: [&quot;#0866C6&quot;, &quot;#E9ECEF&quot;],  &quot;innerRadius&quot;: 60, &quot;radius&quot;: 90 }" style="display: none;">30/100</span><svg class="peity" height="180" width="180"><path d="M 90 0 A 90 90 0 0 1 175.59508646656383 117.81152949374527 L 147.06339097770922 108.54101966249684 A 60 60 0 0 0 90 30" fill="#0866C6"></path><path d="M 175.59508646656383 117.81152949374527 A 90 90 0 1 1 89.99999999999999 0 L 89.99999999999999 30 A 60 60 0 1 0 147.06339097770922 108.54101966249684" fill="#E9ECEF"></path></svg>
+                </div>
+              </div>
+            </div> -->
+  
+  
+          </div>
+  
+          <div class="col-4">
+            <!-- <div class="card bd-0 shadow-base pd-30">
+              <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Server Status</h6>
+              <p class="mg-b-25">Summary of the status of your server.</p>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">CPU Usage (40.05 - 32 cpus)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar wd-25p" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">Memory Usage (32.2%)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-teal wd-60p" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">Disk Usage (82.2%)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-danger wd-70p" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">Databases (63/100)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-warning wd-50p" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">Domains (30/50)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-info wd-45p" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <label class="tx-12 tx-gray-600 mg-b-10">Email Account (13/50)</label>
+              <div class="progress ht-5 mg-b-10">
+                <div class="progress-bar bg-purple wd-65p" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+  
+              <div class="mg-t-20 tx-13">
+                <a href="" class="tx-gray-600 hover-info">Generate Report</a>
+                <a href="" class="tx-gray-600 hover-info bd-l mg-l-10 pd-l-10">Print Report</a>
+              </div>
+            </div> -->
+  
+            <!-- <div class="card bg-transparent shadow-base bd-0 mg-t-20">
+              <div class="bg-primary rounded-top">
+                <div class="pd-x-30 pd-t-30">
+                  <h6 class="tx-13 tx-uppercase tx-white tx-semibold tx-spacing-1">Sale Status</h6>
+                  <p class="mg-b-20 tx-white-6">As of October 10 - 17, 2017</p>
+                  <h3 class="tx-lato tx-white mg-b-0">$12, 201 <i class="icon ion-android-arrow-up tx-white-5"></i></h3>
+                </div>
+                <div id="chartLine1" class="wd-100p ht-150 rickshaw_graph"><svg width="530" height="150"><g><path d="M0,56.25Q35.333333333333336,30.999999999999993,40.769230769230774,29.999999999999993C48.92307692307693,28.499999999999993,73.38461538461539,36.75,81.53846153846155,41.25S114.15384615384616,74.25,122.30769230769232,75S154.92307692307693,49.68749999999999,163.0769230769231,48.74999999999999S195.6923076923077,62.0625,203.84615384615387,65.625S236.46153846153848,82.5,244.61538461538464,84.375S277.2307692307692,86.25,285.38461538461536,84.375S318.00000000000006,68.4375,326.1538461538462,65.625S358.7692307692308,56.25,366.9230769230769,56.25S399.5384615384616,63.75,407.69230769230774,65.625S440.3076923076923,76.875,448.46153846153845,75S481.07692307692315,49.6875,489.2307692307693,46.875Q494.66666666666674,45,530,46.875L530,75Q494.66666666666674,83.125,489.2307692307693,84.375C481.07692307692315,86.25,456.6153846153846,90.9375,448.46153846153845,93.75S415.84615384615387,113.4375,407.69230769230774,112.5S375.07692307692304,85.3125,366.9230769230769,84.375S334.3076923076923,100.3125,326.1538461538462,103.125S293.5384615384615,112.5,285.38461538461536,112.5S252.7692307692308,106.875,244.61538461538464,103.125S212.00000000000003,76.3125,203.84615384615387,75S171.23076923076925,86.25,163.0769230769231,90S130.46153846153848,112.125,122.30769230769232,112.5S89.69230769230771,96.5625,81.53846153846155,93.75S48.92307692307693,84.375,40.769230769230774,84.375Q35.333333333333336,84.375,0,93.75Z" class="area" fill="rgba(255,255,255,0.4)"></path></g><g><path d="M0,93.75Q35.333333333333336,84.375,40.769230769230774,84.375C48.92307692307693,84.375,73.38461538461539,90.9375,81.53846153846155,93.75S114.15384615384616,112.875,122.30769230769232,112.5S154.92307692307693,93.75,163.0769230769231,90S195.6923076923077,73.6875,203.84615384615387,75S236.46153846153848,99.375,244.61538461538464,103.125S277.2307692307692,112.5,285.38461538461536,112.5S318.00000000000006,105.9375,326.1538461538462,103.125S358.7692307692308,83.4375,366.9230769230769,84.375S399.5384615384616,111.5625,407.69230769230774,112.5S440.3076923076923,96.5625,448.46153846153845,93.75S481.07692307692315,86.25,489.2307692307693,84.375Q494.66666666666674,83.125,530,75L530,150Q494.66666666666674,150,489.2307692307693,150C481.07692307692315,150,456.6153846153846,150,448.46153846153845,150S415.84615384615387,150,407.69230769230774,150S375.07692307692304,150,366.9230769230769,150S334.3076923076923,150,326.1538461538462,150S293.5384615384615,150,285.38461538461536,150S252.7692307692308,150,244.61538461538464,150S212.00000000000003,150,203.84615384615387,150S171.23076923076925,150,163.0769230769231,150S130.46153846153848,150,122.30769230769232,150S89.69230769230771,150,81.53846153846155,150S48.92307692307693,150,40.769230769230774,150Q35.333333333333336,150,0,150Z" class="area" fill="#1061b4"></path></g></svg></div>
+              </div>
+              <div class="bg-white pd-20 rounded-bottom d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-start">
+                  <div><span id="sparkline6"><canvas width="41" height="40" style="display: inline-block; width: 41px; height: 40px; vertical-align: top;"></canvas></span></div>
+                  <div class="mg-l-15">
+                    <label class="tx-uppercase tx-10 tx-medium tx-spacing-1 mg-b-0">Average Sales</label>
+                    <h6 class="tx-inverse mg-b-0 tx-lato tx-bold">$603, 201</h6>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div><span id="sparkline7"><canvas width="41" height="40" style="display: inline-block; width: 41px; height: 40px; vertical-align: top;"></canvas></span></div>
+                  <div class="mg-l-15">
+                    <label class="tx-uppercase tx-10 tx-medium tx-spacing-1 mg-b-0">Total Sales</label>
+                    <h6 class="tx-inverse mg-b-0 tx-lato tx-bold">$822, 677</h6>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+  
+            <div class="card bd-0 mg-t-20">
+              <div id="carousel2" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel2" data-slide-to="0" class=""></li>
+                  <li data-target="#carousel2" data-slide-to="1" class=""></li>
+                  <li data-target="#carousel2" data-slide-to="2" class="active"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item">
+                    <div class="bg-br-primary pd-30 ht-300 pos-relative d-flex align-items-center rounded">
+                      <!-- <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div> -->
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <a href="https://dx.doi.org/10.3389%2Ffpsyg.2019.00855"><h6 class="lh-5 mg-b-20 tx-white">Revealing the Electrophysiological Correlates of Working Memory-Load Effects in Symmetry Span Task With HHT Method</h6></a>
+                        <!-- <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">12K+ Views</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">234 Shares</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">43 Comments</a>
+                        </nav> -->
+                      </div>
+                    </div><!-- d-flex -->
+                  </div>
+                  <div class="carousel-item">
+                    <div class="bg-info pd-30 ht-300 pos-relative d-flex align-items-center rounded">
+                      <!-- <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div> -->
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <a href="https://doi.org/10.1016/j.brs.2018.04.014"><h6 class="lh-5 mg-b-20 tx-white">Effects of prefrontal theta-burst stimulation on brain function in treatment-resistant depression: A randomized sham-controlled neuroimaging study</h6></a>
+                        <!-- <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">Edit</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Unpublish</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Delete</a>
+                        </nav> -->
+                      </div>
+                    </div><!-- d-flex -->
+                  </div>
+                  <div class="carousel-item active">
+                    <div class="bg-purple pd-30 ht-300 d-flex pos-relative align-items-center rounded">
+                      <!-- <div class="pos-absolute t-15 r-25">
+                        <a href="" class="tx-white-5 hover-info"><i class="icon ion-edit tx-16"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-stats-bars tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-gear-a tx-20"></i></a>
+                        <a href="" class="tx-white-5 hover-info mg-l-7"><i class="icon ion-more tx-20"></i></a>
+                      </div> -->
+                      <div class="tx-white">
+                        <p class="tx-uppercase tx-11 tx-medium tx-mont tx-spacing-2 tx-white-5">Recent Article</p>
+                        <a href="https://doi.org/10.3389/fnins.2018.00421"><h6 class="lh-5 mg-b-20 tx-white">Anodal and Cathodal tDCS Over the Right Frontal Eye Fields Impacts Spatial Probability Processing Differently in Pro- and Anti-saccades</h6></a>
+                        <!-- <nav class="nav flex-row tx-13">
+                          <a href="" class="tx-white-8 hover-white pd-l-0 pd-r-5">Edit</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Unpublish</a>
+                          <a href="" class="tx-white-8 hover-white pd-x-5">Delete</a>
+                        </nav> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <main id="labview360_intro_bg" class="masthead" role="main" style="
       background-image:''; 
       background-color: #000000;
