@@ -368,11 +368,14 @@ def handle_exception(e):
 
 @app.route('/')
 def page_index():
-    dictnews = g.discourseUserClient.latest_topics()
-    i=0
-    for item in dictnews['topic_list']['topics']:
-        dictnews['topic_list']['topics'][i]['last_posted_at_timestamp']=datetime.datetime.fromisoformat(dictnews['topic_list']['topics'][i]['last_posted_at'][:-1]).timestamp()
-        i+=1
+    try:
+        dictnews = g.discourseUserClient.latest_topics()
+        i=0
+        for item in dictnews['topic_list']['topics']:
+            dictnews['topic_list']['topics'][i]['last_posted_at_timestamp']=datetime.datetime.fromisoformat(dictnews['topic_list']['topics'][i]['last_posted_at'][:-1]).timestamp()
+            i+=1
+    except:
+        pass
     # dictnews['topic_list']['topics'] = [x for x in dictnews['topic_list']['topics'] if x['id']!=517]
     return render_template('index.html', menu_link_active = menu_link_active(), dictnews = dictnews)
 
