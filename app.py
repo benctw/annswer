@@ -368,6 +368,7 @@ def handle_exception(e):
 
 @app.route('/')
 def page_index():
+    dictnews={}
     try:
         dictnews = g.discourseUserClient.latest_topics()
         i=0
