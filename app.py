@@ -320,7 +320,7 @@ def before():
                         g.internalUserDataFromDbUserName = g.userdata["username"]
                         g.internalstrUserDataFromDbNameFirst = g.userdata["name_first"]
                         g.internalstrUserDataFromDbNameLast = g.userdata["name_last"]
-                        g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username=g.userdata['forum_userid'], api_key=ac.discourseForumConfig['strSystemApiKey'])
+                        g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username=g.userdata['username'], api_key=ac.discourseForumConfig['strSystemApiKey'])
                     else:
                         resp = make_response(redirect(request.url))
                         resp.delete_cookie("UserId")
@@ -496,7 +496,7 @@ if __name__ == "__main__":
     if not app.debug:
         handler = logging.FileHandler('flask.log')
         app.logger.addHandler(handler)
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    app.run(host='127.0.0.1', port=5001, debug=False)
 
 # pyinstaller command
 # pyinstaller --add-data "templates/*;templates" --add-data "static/*;static"  -F app.py
