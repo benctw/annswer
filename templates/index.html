@@ -472,7 +472,7 @@
         <!-- <div class="container">
           <div class="row">
             <div class="col-sm">
-              {% for item in dictnews['topic_list']['topics'] %}
+              {% for item in dictnews.get('topic_list').get('topics') %}
               {{ item['title'] }}<br>
               {% endfor %}
             </div>
