@@ -509,7 +509,7 @@
   
               <table class="table table-valign-middle mg-b-0">
                 <tbody>
-                  {% for item in dictnews['topic_list']['topics'] %}
+                  {% for item in dictnews.get('topic_list').get('topics') %}
                   <tr>
                     <!-- <td class="pd-l-0-force">
                       <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
@@ -518,7 +518,7 @@
                       <h6 class="tx-inverse tx-14 mg-b-0">{{ item['title'] }}</h6>
                       <!-- <span class="tx-12">@deborah.miner</span> -->
                     </td>
-                    <td align="right">{{ item['last_posted_at']|formatdatetime }}</td>
+                    <td align="right">{{ item.get('last_posted_at')|formatdatetime }}</td>
                     <!-- <td><span id="sparkline1"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td> -->
                     <!-- <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td> -->
                   </tr>
