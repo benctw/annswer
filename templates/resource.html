@@ -11,13 +11,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Annswer">
   <meta name="twitter:description" content="Annswer Platform">
-  <meta name="twitter:image" content="//127.0.0.1:5001/img/social.png">
+  <meta name="twitter:image" content="//annswer.org/img/social.png">
   <!-- Facebook -->
-  <meta property="og:url" content="//127.0.0.1:5001">
+  <meta property="og:url" content="//annswer.org">
   <meta property="og:title" content="Annswer">
   <meta property="og:description" content="Annswer Platform">
-  <meta property="og:image" content="//127.0.0.1:5001/img/social.png">
-  <meta property="og:image:secure_url" content="//127.0.0.1:5001/img/social.png">
+  <meta property="og:image" content="//annswer.org/img/social.png">
+  <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
@@ -393,9 +393,9 @@
         $(item).addClass('active');
       }
       intCid = cid
-      history.pushState('', '', '//127.0.0.1:5001/resource/' + intCid);
+      history.pushState('', '', '//annswer.org/resource/' + intCid);
       $.ajax({
-        url: "//127.0.0.1:5001/resource/articles_list/" + intCid,
+        url: "//annswer.org/resource/articles_list/" + intCid,
         type: "GET",
         // data: "cid=" + cid,
         timeout: 3000,
@@ -443,9 +443,9 @@
       var page = '/resource/' + intCid + '/' + tid;
       $('.br-mailbox-list-item').removeClass('active');
       $(item).addClass('active');
-      history.pushState('', '', '//127.0.0.1:5001/resource/' + intCid + '/' + tid);
+      history.pushState('', '', '//annswer.org/resource/' + intCid + '/' + tid);
       $.ajax({
-        url: "//127.0.0.1:5001/resource/article/" + tid,
+        url: "//annswer.org/resource/article/" + tid,
         type: "GET",
         // data: "tid=" + tid,
         timeout: 3000,
