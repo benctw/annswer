@@ -9,6 +9,7 @@ from pydiscourse.client import DiscourseClient
 import pydiscourse.sso as dcsso
 from werkzeug.exceptions import HTTPException
 from logging import FileHandler
+from bs4 import BeautifulSoup
 
 # configuration
 DEBUG = False
@@ -380,6 +381,33 @@ def page_index():
     # dictnews['topic_list']['topics'] = [x for x in dictnews['topic_list']['topics'] if x['id']!=517]
     return render_template('index.html', menu_link_active = menu_link_active(), dictnews = dictnews)
 
+
+@app.route('/resource/article/<int:tid>')
+def resource_article(tid):
+    allowed_cid=tuple(range(54,65))
+    dict_article = g.discourseClient.topic('topic', tid)
+    if 'suggested_topics' in dict_article: dict_article.pop('suggested_topics')
+    if 'category_id' not in dict_article: return ''
+    if dict_article.get('category_id') not in allowed_cid: return ''
+    # return json.dumps([x for x in g.discourseClient.latest_topics(category=cid).get('topic_list').get('topics') if x.get('id') not in tuple(range(551,562))])
+    soup=BeautifulSoup(dict_article.get('post_stream').get('posts')[0].get('cooked'))
+    for div in soup.find_all("div", {'class':'meta'}): 
+        div.decompose()
+    dict_article['post_stream']['posts'][0]['cooked']=str(soup).replace('href="/uploads/', 'href="//the.annswer.org/uploads/')
+    return json.dumps(dict_article)
+
+@app.route('/resource/articles_list/<int:cid>')
+def resource_articles_list(cid):
+    allowed_cid=tuple(range(54,65))
+    if cid not in allowed_cid: return ''
+    return json.dumps([x for x in g.discourseClient.latest_topics(category=cid).get('topic_list').get('topics') if x.get('id') not in tuple(range(551,562))])
+
+@app.route('/resource/<int:cid>/<int:tid>')
+@app.route('/resource')
+@app.route('/resource/')
+def page_resource(cid=None, tid=None):
+    return render_template('resource.html', menu_link_active = menu_link_active(), cid=cid, tid=tid)
+
 @app.route('/about')
 def page_about():
     return render_template('about.html')
@@ -496,7 +524,7 @@ if __name__ == "__main__":
     if not app.debug:
         handler = logging.FileHandler('flask.log')
         app.logger.addHandler(handler)
-    app.run(host='127.0.0.1', port=5001, debug=False)
+    app.run(host='127.0.0.1', port=5001, debug=True)
 
 # pyinstaller command
 # pyinstaller --add-data "templates/*;templates" --add-data "static/*;static"  -F app.py

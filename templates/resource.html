@@ -5,34 +5,27 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-
   <!-- Twitter -->
   <meta name="twitter:site" content="@themepixels">
   <meta name="twitter:creator" content="@themepixels">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Annswer">
-  <meta name="twitter:description" content="Digital Forms of Annswer">
-  <meta name="twitter:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
-
+  <meta name="twitter:description" content="Annswer Platform">
+  <meta name="twitter:image" content="//annswer.org/img/social.png">
   <!-- Facebook -->
-  <meta property="og:url" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static">
+  <meta property="og:url" content="//annswer.org">
   <meta property="og:title" content="Annswer">
-  <meta property="og:description" content="Digital Forms of Annswer">
-
-  <meta property="og:image" content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
-  <meta property="og:image:secure_url"
-    content="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/img/social.png">
+  <meta property="og:description" content="Annswer Platform">
+  <meta property="og:image" content="//annswer.org/img/social.png">
+  <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
-
   <!-- Meta -->
-  <meta name="description" content="Digital Forms of Annswer">
+  <meta name="description" content="Annswer Platform">
   <meta name="author" content="Annswer Group">
 
-  <title>Annswer - Artificial Neural Networks Worker</title>
+  <title>Annswer - 技術專欄</title>
 
   <!-- vendor css -->
   <link href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/font-awesome/css/font-awesome.css"
@@ -53,10 +46,12 @@
   <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
 </head>
 
-<body>
+<body class="collapsed-menu email" topmargin="0" leftmargin="0" link="#004080" vlink="#004080" alink="#004080"
+  bgcolor="#FFFFFF">
 
   <!-- ########## START: LEFT PANEL ########## -->
   {% include 'left_panel.html' %}
+
   <!-- ########## END: LEFT PANEL ########## -->
 
   <!-- ########## START: HEAD PANEL ########## -->
@@ -248,38 +243,233 @@
 
   <!-- ########## START: MAIN PANEL ########## -->
   <div class="br-mainpanel">
-    <div class="pd-30" style="padding-bottom: 10px;">
-      <h4 class="tx-gray-800 mg-b-5">使用者控制台</h4>
-      <!-- <p class="mg-b-0">這裡正加緊趕工中...</p> -->
-    </div><!-- d-flex -->
-    <div class="br-pagebody mg-t-5 pd-x-30">
-      <div class="row row-sm mg-t-20">
-        <div class="col-12">
-          <div class="card shadow-base card-body pd-25 bd-0">
-            <div class="row">
-              <div class="col-sm-6 tx-16">
-                <h6 class="card-title tx-uppercase tx-12"></h6>
-                <button onclick="javascript:location.href='/change_email'"
-                  class="btn btn-primary btn-block mg-b-10">更換登入Email</button>
-                <button onclick="javascript:location.href='/2fa'" class="btn btn-primary btn-block mg-b-10">兩階段式認證
-                  (2FA)</button>
-                <button onclick="javascript:location.href='/signout'"
-                  class="btn btn-danger btn-block mg-b-10">登出</button>
-              </div><!-- col-6 -->
-              <div class="col-sm-6">
-                <img src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/images/rice-hands.png"
-                  style="width: 100%; margin-top: -15px; ">
-              </div>
-            </div><!-- row -->
-          </div><!-- card -->
-        </div><!-- col-9 -->
-        <!-- <div class="col-4">
-          </div> -->
-      </div><!-- row -->
-    </div><!-- br-pagebody -->
-    {% include 'footer.html' %}
+    <div class="br-subleft" style="padding: 0px;">
+      <nav class="nav br-nav-mailbox flex-column">
+        <div class="nav-link" onclick="getArticlesList(54,0, this);" style="cursor: pointer;" id="nav-54"><i
+            class="icon ion-ios-checkmark-outline"></i> 資料科學</div>
+        <div class="nav-link" onclick="getArticlesList(55,0, this);" style="cursor: pointer;" id="nav-55"><i
+            class="icon ion-ios-checkmark-outline"></i> 程式語言</div>
+        <div class="nav-link" onclick="getArticlesList(56,0, this);" style="cursor: pointer;" id="nav-56"><i
+            class="icon ion-ios-checkmark-outline"></i> 機器學習</div>
+        <div class="nav-link" onclick="getArticlesList(57,0, this);" style="cursor: pointer;" id="nav-57"><i
+            class="icon ion-ios-checkmark-outline"></i> 電腦視覺</div>
+        <div class="nav-link" onclick="getArticlesList(58,0, this);" style="cursor: pointer;" id="nav-58"><i
+            class="icon ion-ios-checkmark-outline"></i> 自然語言</div>
+        <div class="nav-link" onclick="getArticlesList(59,0, this);" style="cursor: pointer;" id="nav-59"><i
+            class="icon ion-ios-checkmark-outline"></i> 邊緣運算</div>
+        <div class="nav-link" onclick="getArticlesList(60,0, this);" style="cursor: pointer;" id="nav-60"><i
+            class="icon ion-ios-checkmark-outline"></i> 神經網路</div>
+        <div class="nav-link" onclick="getArticlesList(61,0, this);" style="cursor: pointer;" id="nav-61"><i
+            class="icon ion-ios-checkmark-outline"></i> AI職涯</div>
+        <div class="nav-link" onclick="getArticlesList(62,0, this);" style="cursor: pointer;" id="nav-62"><i
+            class="icon ion-ios-checkmark-outline"></i> 智慧控制</div>
+        <div class="nav-link" onclick="getArticlesList(63,0, this);" style="cursor: pointer;" id="nav-63"><i
+            class="icon ion-ios-checkmark-outline"></i> 資料集與競賽</div>
+        <div class="nav-link" onclick="getArticlesList(64,0, this);" style="cursor: pointer;" id="nav-64"><i
+            class="icon ion-ios-checkmark-outline"></i> 其他</div>
+      </nav>
+    </div><!-- br-subleft -->
+    <div class="br-mailbox-list">
+      <div class="br-mailbox-list-header">
+        <a href="" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+        <h6 class="tx-inverse mg-b-0 tx-13 tx-uppercase">AI學習資源 <span class="tx-roboto"></span></h6>
+      </div><!-- br-mailbox-list-header -->
+      <div id="br-mailbox-list-body">
+        <div style="font-size: 1.5em;
+  color: #696969;
+  margin: 20px 20px;">
+          <p>點選左側學習資源分類</p>
+          <p><img src="/static/images/2021/0524/20210524_1512.png" alt="" srcset="" class="br-mailbox-list-img"></p>
+        </div>
+      </div>
+    </div><!-- br-mailbox-list -->
+
+    <div class="br-mailbox-body">
+      <div class="br-msg-header d-flex justify-content-between" id="br-msg-header">
+        <div class="media align-items-center">
+          <div class="media-body mg-l-10" id="br-msg-header-content">
+            <p class="tx-inverse tx-medium mg-b-0" style="font-size: 1.5em; font-weight: 600; color: #c72837;">
+              AI學習資源
+            </p>
+          </div><!-- media-body -->
+        </div><!-- media -->
+      </div><!-- br-msg-header -->
+      <div class="br-msg-body" id="br-msg-body">
+        <p>人類跟其他生物的一個最大不同點在於，人類運透過語言、文字，將知識一代一代傳承下去。 生命有終點，但知識可以延續。Annswer很樂意成為知識交流的媒介，提供知識交流的平台， 讓更多知識火花在Annswer誕生、保存、交流。</p>
+        <p>Annswer是一個機器學習平台，透過這個平台， 各個行業將可利用機器學習，得到最佳的製程參數、預測 電子商務的假期流量，或預測農作物的收成，以在市場上 獲得競爭力。</p>
+        <p>我們希望知識與AI工具的普及，能不受限於種族、地域、貧富。只要是人類，理應都能 享受知識、科技所帶來的便利與美好生活。同樣地，Annswer機器學習平台 希望能打破知識的疆界!!! 讓不懂程式語言的人，透過Annswer，就能 輕鬆操作機器學習工具，並用於學術、工業、生產、社會福利...等領域上。</p>
+        <p>歡迎您使用Annswer的討論區，與其他使用者互動，針對科學、資訊科技、AI演算法等議題 進行知識分享交流。相信透過知識分享激盪火花，可以讓世界變得更好。</p>
+      </div><!-- br-msg-body -->
+    </div><!-- br-mailbox-body -->
+
+
+    <!-- LOAD JQUERY LIBRARY -->
+    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+    <!-- LOADING FONTS AND ICONS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"
+      property="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css"
+      href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" type="text/css"
+      href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/fonts/font-awesome/css/font-awesome.min.css">
+    <!-- REVOLUTION STYLE SHEETS -->
+    <link rel="stylesheet" type="text/css"
+      href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/settings.css">
+    <!-- REVOLUTION LAYERS STYLES -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/layers.css"> -->
+
+    <!-- REVOLUTION NAVIGATION STYLES -->
+    <link rel="stylesheet" type="text/css"
+      href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/revolution/css/navigation.css">
+
+
+
+    <main id="labview360_intro_bg" class="masthead" role="main" style="
+      background-image:''; 
+      background-color: #000000;
+      position: relative;
+      padding: 80px 15px;
+      color: #FFF;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover; display: none;">
+
+      <!-- Parallax Footer Starts -->
+      <main class="footercta" role="main">
+        <div class="container">
+
+          <!-- Hero Title -->
+          <h1 style="font-family: Microsoft YaHei; line-height: 88px;">導入AI人工智慧數位轉型<br>最佳實踐平台</h1>
+          <!-- Mailchimp Subscribe form -->
+          <div class="row">
+            <div class="col-md-12 breath text-center" style="font-family: Microsoft YaHei;">
+              <a href="./machinelearning/" class="btn btn-success btn-lg gototop">前往使用</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- // Parallax Footer Ends -->
+      <!-- ================= -->
+      <div class="br-pagebody mg-t-5 pd-x-30">
+      </div><!-- br-pagebody -->
+      {% include 'footer.html' %}
   </div>
   <!-- ########## END: MAIN PANEL ########## -->
+  <script>
+    $(document).ready(function () {
+      {%if cid is defined and tid is defined%}
+      // getArticlesList({{cid}}, {{tid}}, this);
+      $('#nav-{{cid}}').addClass('active');
+      getArticlesList({{cid}}, {{tid}});
+      {%endif%}
+    });
+  </script>
+  <script>
+    $('.br-mainpanel').removeClass('br-mainpanel');
+    $('.br-pagebody').removeClass('br-pagebody');
+    $('.br-section-wrapper').removeClass('br-section-wrapper');
+    $('.pd-l-10').removeClass('pd-l-10');
+    $('.pd-r-10').removeClass('pd-r-10');
+    $('.pd-t-10').removeClass('pd-t-10');
+    $('.pd-l-20').removeClass('pd-l-20');
+    $('.pd-r-20').removeClass('pd-r-20');
+    $('.pd-t-20').removeClass('pd-t-20');
+    var intGetArticlesList_Count=0
+    {%if cid is defined%}var intCid={{cid}};{%else%}var intCid = 0;{%endif%}
+    {%if tid is defined%}var intTid={{tid}};{%else%}var intTid = 0;{%endif%}
+    function getArticlesList(cid, tid, item) {
+      if (tid.length > 0 && tid != 0) {
+        var page = '/resource/' + cid + '/' + tid;
+      } else {
+        var page = '/resource/' + cid;
+      }
+      if (item !== undefined){
+        $('.nav-link').removeClass('active');
+        $(item).addClass('active');
+      }
+      intCid = cid
+      history.pushState('', '', '//annswer.org/resource/' + intCid);
+      $.ajax({
+        url: "//annswer.org/resource/articles_list/" + intCid,
+        type: "GET",
+        // data: "cid=" + cid,
+        timeout: 3000,
+        error: function () {
+          console.log('error');
+          return false;
+        },
+        success: function (result) {
+          var objJSON = JSON.parse(result);
+          var strCotant = '';
+          var loop_count = 0;
+          var firstArticalID = 0
+          objJSON.forEach(function (element) {
+            if (tid.length > 0 && tid != 0) {
+              getArticle(tid,);
+            } else {
+              if (loop_count == 0) {
+                getArticle(element['id'],);
+              }
+            }
+
+            if (intGetArticlesList_Count==0 && element['id']=={{tid}}){
+              console.log('active')
+              strClassActive = ' active'
+            }else{
+              strClassActive = ''
+            };
+            strCotant += `<div class="br-mailbox-list-item unread${strClassActive}" onclick="getArticle(${element['id']},this)" id="item-${element['id']}"><h6 class="tx-14 mg-b-10 tx-gray-800">${element['title']}</h6><div class="d-flex justify-content-between mg-b-5"><span class="tx-12">${element['created_at']}</span></div></div>`
+            loop_count += 1;
+          });
+          var strCotantHead = '<div class="br-mailbox-list-header"><a href="" id="showMailBoxLeft" class="show-mailbox-left hidden-sm-up"><i class="fa fa-arrow-right"></i></a><h6 class="tx-inverse mg-b-0 tx-13 tx-uppercase">AI學習資源 <span class="tx-roboto">(';
+          strCotantHead += loop_count;
+          strCotantHead += ')</span></h6></div>';
+          // strCotant = strCotantHead + strCotant
+          $('#br-mailbox-list-body').html(strCotant);
+        }
+      }).done(function () {
+        intGetArticlesList_Count+=1
+      });
+      ga('send', 'pageview', page);
+    }
+
+    function getArticle(tid, item) {
+      var page = '/resource/' + intCid + '/' + tid;
+      $('.br-mailbox-list-item').removeClass('active');
+      $(item).addClass('active');
+      history.pushState('', '', '//annswer.org/resource/' + intCid + '/' + tid);
+      $.ajax({
+        url: "//annswer.org/resource/article/" + tid,
+        type: "GET",
+        // data: "tid=" + tid,
+        timeout: 3000,
+        error: function () {
+          console.log('error');
+          return false;
+        },
+        success: function (result) {
+          var objJSON = JSON.parse(result);
+          var strCotant = '';
+          $('#br-msg-body').html(objJSON['post_stream']['posts'][0]['cooked']);
+
+          var br_msg_header_content = '';
+          br_msg_header_content += '<p class="tx-inverse tx-medium mg-b-0" style="font-size: 1.5em; font-weight: 600; color: #c72837;">';
+          br_msg_header_content += objJSON['title'];
+          br_msg_header_content += '</p><p class="tx-12 mg-b-0"><span>';
+          br_msg_header_content += objJSON['created_at'];
+          br_msg_header_content += '</span></p>';
+          $('#br-msg-header-content').html(br_msg_header_content);
+        }
+      }).done(function () {
+      });
+      ga('send', 'pageview', page);
+    };
+  </script>
   {% include 'footer_script.html' %}
 </body>
 
