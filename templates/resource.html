@@ -11,13 +11,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Annswer">
   <meta name="twitter:description" content="Annswer Platform">
-  <meta name="twitter:image" content="//annswer.org/img/social.png">
+  <meta name="twitter:image" content="//127.0.0.1:5001/img/social.png">
   <!-- Facebook -->
-  <meta property="og:url" content="//annswer.org">
+  <meta property="og:url" content="//127.0.0.1:5001">
   <meta property="og:title" content="Annswer">
   <meta property="og:description" content="Annswer Platform">
-  <meta property="og:image" content="//annswer.org/img/social.png">
-  <meta property="og:image:secure_url" content="//annswer.org/img/social.png">
+  <meta property="og:image" content="//127.0.0.1:5001/img/social.png">
+  <meta property="og:image:secure_url" content="//127.0.0.1:5001/img/social.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="600">
@@ -46,9 +46,43 @@
   <link rel="stylesheet" href="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/css/annswer.css">
 </head>
 
+<style>
+  #spinner:not([hidden]) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #spinner::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #17a2b8;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
 <body class="collapsed-menu email" topmargin="0" leftmargin="0" link="#004080" vlink="#004080" alink="#004080"
   bgcolor="#FFFFFF">
-
+  <div hidden id="spinner"></div>
   <!-- ########## START: LEFT PANEL ########## -->
   {% include 'left_panel.html' %}
 
@@ -297,16 +331,19 @@
         </div><!-- media -->
       </div><!-- br-msg-header -->
       <div class="br-msg-body" id="br-msg-body">
-        <p>人類跟其他生物的一個最大不同點在於，人類運透過語言、文字，將知識一代一代傳承下去。 生命有終點，但知識可以延續。Annswer很樂意成為知識交流的媒介，提供知識交流的平台， 讓更多知識火花在Annswer誕生、保存、交流。</p>
+        <p>人類跟其他生物的一個最大不同點在於，人類運透過語言、文字，將知識一代一代傳承下去。 生命有終點，但知識可以延續。Annswer很樂意成為知識交流的媒介，提供知識交流的平台，
+          讓更多知識火花在Annswer誕生、保存、交流。</p>
         <p>Annswer是一個機器學習平台，透過這個平台， 各個行業將可利用機器學習，得到最佳的製程參數、預測 電子商務的假期流量，或預測農作物的收成，以在市場上 獲得競爭力。</p>
-        <p>我們希望知識與AI工具的普及，能不受限於種族、地域、貧富。只要是人類，理應都能 享受知識、科技所帶來的便利與美好生活。同樣地，Annswer機器學習平台 希望能打破知識的疆界!!! 讓不懂程式語言的人，透過Annswer，就能 輕鬆操作機器學習工具，並用於學術、工業、生產、社會福利...等領域上。</p>
+        <p>我們希望知識與AI工具的普及，能不受限於種族、地域、貧富。只要是人類，理應都能 享受知識、科技所帶來的便利與美好生活。同樣地，Annswer機器學習平台 希望能打破知識的疆界!!!
+          讓不懂程式語言的人，透過Annswer，就能 輕鬆操作機器學習工具，並用於學術、工業、生產、社會福利...等領域上。</p>
         <p>歡迎您使用Annswer的討論區，與其他使用者互動，針對科學、資訊科技、AI演算法等議題 進行知識分享交流。相信透過知識分享激盪火花，可以讓世界變得更好。</p>
       </div><!-- br-msg-body -->
     </div><!-- br-mailbox-body -->
 
 
     <!-- LOAD JQUERY LIBRARY -->
-    <script type="text/javascript" src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
+    <script type="text/javascript"
+      src="{{g.parseResult.scheme}}://{{g.parseResult.netloc}}/static/lib/jquery/jquery.js"></script>
     <!-- LOADING FONTS AND ICONS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"
       property="stylesheet" type="text/css" media="all" />
@@ -362,11 +399,11 @@
   <!-- ########## END: MAIN PANEL ########## -->
   <script>
     $(document).ready(function () {
-      {%if cid is defined and tid is defined%}
+      {%if cid is defined and tid is defined %}
       // getArticlesList({{cid}}, {{tid}}, this);
       $('#nav-{{cid}}').addClass('active');
-      getArticlesList({{cid}}, {{tid}});
-      {%endif%}
+      getArticlesList({{ cid }}, {{ tid }});
+    {% endif %}
     });
   </script>
   <script>
@@ -379,23 +416,23 @@
     $('.pd-l-20').removeClass('pd-l-20');
     $('.pd-r-20').removeClass('pd-r-20');
     $('.pd-t-20').removeClass('pd-t-20');
-    var intGetArticlesList_Count=0
-    {%if cid is defined%}var intCid={{cid}};{%else%}var intCid = 0;{%endif%}
-    {%if tid is defined%}var intTid={{tid}};{%else%}var intTid = 0;{%endif%}
+    var intGetArticlesList_Count = 0
+    {%if cid is defined %} var intCid = {{ cid }}; {%else%} var intCid = 0; {% endif %}
+    {%if tid is defined %} var intTid = {{ tid }}; {%else%} var intTid = 0; {% endif %}
     function getArticlesList(cid, tid, item) {
       if (tid.length > 0 && tid != 0) {
         var page = '/resource/' + cid + '/' + tid;
       } else {
         var page = '/resource/' + cid;
       }
-      if (item !== undefined){
+      if (item !== undefined) {
         $('.nav-link').removeClass('active');
         $(item).addClass('active');
       }
       intCid = cid
-      history.pushState('', '', '//annswer.org/resource/' + intCid);
+      history.pushState('', '', '//127.0.0.1:5001/resource/' + intCid);
       $.ajax({
-        url: "//annswer.org/resource/articles_list/" + intCid,
+        url: "//127.0.0.1:5001/resource/articles_list/" + intCid,
         type: "GET",
         // data: "cid=" + cid,
         timeout: 3000,
@@ -410,19 +447,19 @@
           var loop_count = 0;
           var firstArticalID = 0
           objJSON.forEach(function (element) {
-            if (typeof(tid) !== 'undefined' && tid != 0 && loop_count == 0) {
+            if (typeof (tid) !== 'undefined' && tid != 0 && loop_count == 0) {
               getArticle(tid,);
             } else {
               if (loop_count == 0) {
                 getArticle(element['id'],);
                 strClassActive = ' active'
-              }else{
+              } else {
                 strClassActive = ''
               }
             }
-            
-            if (typeof(tid) !== 'undefined'){
-              if (intGetArticlesList_Count==0 && element['id']==tid){
+
+            if (typeof (tid) !== 'undefined') {
+              if (intGetArticlesList_Count == 0 && element['id'] == tid) {
                 strClassActive = ' active'
               };
             };
@@ -434,18 +471,20 @@
           $('#br-mailbox-list-body').html(strCotant);
         }
       }).done(function () {
-        intGetArticlesList_Count+=1
+        intGetArticlesList_Count += 1
       });
       ga('send', 'pageview', page);
     };
 
     function getArticle(tid, item) {
+      spinner.removeAttribute('hidden');
+      $('.br-mailbox-body').css('display','none');
       var page = '/resource/' + intCid + '/' + tid;
       $('.br-mailbox-list-item').removeClass('active');
       $(item).addClass('active');
-      history.pushState('', '', '//annswer.org/resource/' + intCid + '/' + tid);
+      history.pushState('', '', '//127.0.0.1:5001/resource/' + intCid + '/' + tid);
       $.ajax({
-        url: "//annswer.org/resource/article/" + tid,
+        url: "//127.0.0.1:5001/resource/article/" + tid,
         type: "GET",
         // data: "tid=" + tid,
         timeout: 3000,
@@ -465,6 +504,8 @@
           br_msg_header_content += objJSON['created_at'];
           br_msg_header_content += '</span></p>';
           $('#br-msg-header-content').html(br_msg_header_content);
+          spinner.setAttribute('hidden', '');
+          $('.br-mailbox-body').css('display','block');
         }
       }).done(function () {
       });
