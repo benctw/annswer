@@ -530,7 +530,7 @@ if __name__ == "__main__":
     if not app.debug:
         handler = logging.FileHandler('flask.log')
         app.logger.addHandler(handler)
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    app.run(host='127.0.0.1', port=5001, debug=False)
 
 # pyinstaller command
 # pyinstaller --add-data "templates/*;templates" --add-data "static/*;static"  -F app.py
