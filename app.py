@@ -109,7 +109,7 @@ def signup():
     password1 = str(request.form.get('password1'))
     password2 = str(request.form.get('password2'))
     name_last = str(request.form.get('name_last'))
-    name_first = str(request.form.get('name_last'))
+    name_first = str(request.form.get('name_first'))
     if not email:
         return redirect(url_for('page_error', errorcode=460773))
     elif len(email)==0:
