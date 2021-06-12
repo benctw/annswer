@@ -469,35 +469,8 @@
       </section>
 
       <div class="br-pagebody mg-t-5 pd-x-30">
-        <!-- <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              {% for item in dictnews.get('topic_list').get('topics') %}
-              {{ item['title'] }}<br>
-              {% endfor %}
-            </div>
-          </div>
-        </div> -->
         <div class="row row-sm mg-t-20">
           <div class="col-8">
-            <!-- <div class="card pd-0 bd-0 shadow-base">
-              <div class="pd-x-30 pd-t-30 pd-b-15">
-                <div class="d-flex align-items-center justify-content-between">
-                  <div>
-                    <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Network Performance</h6>
-                    <p class="mg-b-0">Duis autem vel eum iriure dolor in hendrerit in vulputate...</p>
-                  </div>
-                  <div class="tx-13">
-                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-purple mg-r-10"></span> TCP Reset Packets</p>
-                    <p class="mg-b-0"><span class="square-8 rounded-circle bg-pink mg-r-10"></span> TCP FIN Packets</p>
-                  </div>
-                </div>
-              </div>
-              <div class="pd-x-15 pd-b-15">
-                <div id="ch1" class="br-chartist br-chartist-2 ht-200 ht-sm-300"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="182.14285714285714" x2="182.14285714285714" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="324.2857142857143" x2="324.2857142857143" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="466.42857142857144" x2="466.42857142857144" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="608.5714285714286" x2="608.5714285714286" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="750.7142857142857" x2="750.7142857142857" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="892.8571428571429" x2="892.8571428571429" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line x1="1035" x2="1035" y1="15" y2="270" class="ct-grid ct-horizontal"></line><line y1="270" y2="270" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="227.5" y2="227.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="185" y2="185" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="142.5" y2="142.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="100" y2="100" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="57.5" y2="57.5" x1="40" x2="1035" class="ct-grid ct-vertical"></line><line y1="15" y2="15" x1="40" x2="1035" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M40,270L40,227.5C87.381,216.167,134.762,193.5,182.143,193.5C229.524,193.5,276.905,210.5,324.286,210.5C371.667,210.5,419.048,202,466.429,202C513.81,202,561.19,220.7,608.571,227.5C655.952,234.3,703.333,244.5,750.714,244.5C798.095,244.5,845.476,227.5,892.857,227.5C940.238,227.5,987.619,233.167,1035,236L1035,270Z" class="ct-area"></path><path d="M40,227.5C87.381,216.167,134.762,193.5,182.143,193.5C229.524,193.5,276.905,210.5,324.286,210.5C371.667,210.5,419.048,202,466.429,202C513.81,202,561.19,220.7,608.571,227.5C655.952,234.3,703.333,244.5,750.714,244.5C798.095,244.5,845.476,227.5,892.857,227.5C940.238,227.5,987.619,233.167,1035,236" class="ct-line"></path><line x1="40" y1="227.5" x2="40.01" y2="227.5" class="ct-point" ct:value="5"></line><line x1="182.14285714285714" y1="193.5" x2="182.15285714285713" y2="193.5" class="ct-point" ct:value="9"></line><line x1="324.2857142857143" y1="210.5" x2="324.29571428571427" y2="210.5" class="ct-point" ct:value="7"></line><line x1="466.42857142857144" y1="202" x2="466.43857142857144" y2="202" class="ct-point" ct:value="8"></line><line x1="608.5714285714286" y1="227.5" x2="608.5814285714285" y2="227.5" class="ct-point" ct:value="5"></line><line x1="750.7142857142857" y1="244.5" x2="750.7242857142857" y2="244.5" class="ct-point" ct:value="3"></line><line x1="892.8571428571429" y1="227.5" x2="892.8671428571429" y2="227.5" class="ct-point" ct:value="5"></line><line x1="1035" y1="236" x2="1035.01" y2="236" class="ct-point" ct:value="4"></line></g><g class="ct-series ct-series-b"><path d="M40,270L40,185C87.381,170.833,134.762,142.5,182.143,142.5C229.524,142.5,276.905,185,324.286,185C371.667,185,419.048,125.5,466.429,125.5C513.81,125.5,561.19,202,608.571,202C655.952,202,703.333,187.125,750.714,176.5C798.095,165.875,845.476,134,892.857,134C940.238,134,987.619,168,1035,185L1035,270Z" class="ct-area"></path><path d="M40,185C87.381,170.833,134.762,142.5,182.143,142.5C229.524,142.5,276.905,185,324.286,185C371.667,185,419.048,125.5,466.429,125.5C513.81,125.5,561.19,202,608.571,202C655.952,202,703.333,187.125,750.714,176.5C798.095,165.875,845.476,134,892.857,134C940.238,134,987.619,168,1035,185" class="ct-line"></path><line x1="40" y1="185" x2="40.01" y2="185" class="ct-point" ct:value="10"></line><line x1="182.14285714285714" y1="142.5" x2="182.15285714285713" y2="142.5" class="ct-point" ct:value="15"></line><line x1="324.2857142857143" y1="185" x2="324.29571428571427" y2="185" class="ct-point" ct:value="10"></line><line x1="466.42857142857144" y1="125.5" x2="466.43857142857144" y2="125.5" class="ct-point" ct:value="17"></line><line x1="608.5714285714286" y1="202" x2="608.5814285714285" y2="202" class="ct-point" ct:value="8"></line><line x1="750.7142857142857" y1="176.5" x2="750.7242857142857" y2="176.5" class="ct-point" ct:value="11"></line><line x1="892.8571428571429" y1="134" x2="892.8671428571429" y2="134" class="ct-point" ct:value="16"></line><line x1="1035" y1="185" x2="1035.01" y2="185" class="ct-point" ct:value="10"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="275" width="142.14285714285714" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">1</span></foreignObject><foreignObject style="overflow: visible;" x="182.14285714285714" y="275" width="142.14285714285714" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">2</span></foreignObject><foreignObject style="overflow: visible;" x="324.2857142857143" y="275" width="142.14285714285717" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">3</span></foreignObject><foreignObject style="overflow: visible;" x="466.42857142857144" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">4</span></foreignObject><foreignObject style="overflow: visible;" x="608.5714285714286" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">5</span></foreignObject><foreignObject style="overflow: visible;" x="750.7142857142857" y="275" width="142.14285714285722" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">6</span></foreignObject><foreignObject style="overflow: visible;" x="892.8571428571429" y="275" width="142.1428571428571" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 142px; height: 20px;">7</span></foreignObject><foreignObject style="overflow: visible;" x="1035" y="275" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">8</span></foreignObject><foreignObject style="overflow: visible;" y="227.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="185" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">5</span></foreignObject><foreignObject style="overflow: visible;" y="142.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="100" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">15</span></foreignObject><foreignObject style="overflow: visible;" y="57.5" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="15" x="0" height="42.5" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 43px; width: 30px;">25</span></foreignObject><foreignObject style="overflow: visible;" y="-15" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">30</span></foreignObject></g></svg></div>
-              </div>
-            </div> -->
-  
             <div class="card bd-0 shadow-base pd-30 mg-t-20">
               <div class="d-flex align-items-center justify-content-between">
                 <div>
@@ -509,6 +482,8 @@
   
               <table class="table table-valign-middle mg-b-0">
                 <tbody>
+                  {% if dictnews %}
+                  {% if dictnews.get('topic_list') %}
                   {% for item in dictnews.get('topic_list').get('topics') %}
                   <tr>
                     <!-- <td class="pd-l-0-force">
@@ -523,66 +498,8 @@
                     <!-- <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td> -->
                   </tr>
                   {% endfor %}
-                  <!-- <tr>
-                    <td class="pd-l-0-force">
-                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
-                    </td>
-                    <td>
-                      <h6 class="tx-inverse tx-14 mg-b-0">Deborah Miner</h6>
-                      <span class="tx-12">@deborah.miner</span>
-                    </td>
-                    <td>Nov 01, 2017</td>
-                    <td><span id="sparkline1"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
-                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-0-force">
-                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
-                    </td>
-                    <td>
-                      <h6 class="tx-inverse tx-14 mg-b-0">Belinda Connor</h6>
-                      <span class="tx-12">@belinda.connor</span>
-                    </td>
-                    <td>Oct 28, 2017</td>
-                    <td><span id="sparkline2"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
-                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-0-force">
-                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
-                    </td>
-                    <td>
-                      <h6 class="tx-inverse tx-14 mg-b-0">Andrew Wiggins</h6>
-                      <span class="tx-12">@andrew.wiggins</span>
-                    </td>
-                    <td>Oct 27, 2017</td>
-                    <td><span id="sparkline3"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
-                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-0-force">
-                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
-                    </td>
-                    <td>
-                      <h6 class="tx-inverse tx-14 mg-b-0">Brandon Lawrence</h6>
-                      <span class="tx-12">@brandon.lawrence</span>
-                    </td>
-                    <td>Oct 27, 2017</td>
-                    <td><span id="sparkline4"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
-                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
-                  </tr>
-                  <tr>
-                    <td class="pd-l-0-force">
-                      <img src="http://via.placeholder.com/280x280" class="wd-40 rounded-circle" alt="">
-                    </td>
-                    <td>
-                      <h6 class="tx-inverse tx-14 mg-b-0">Marilyn Tarter</h6>
-                      <span class="tx-12">@marilyn.tarter</span>
-                    </td>
-                    <td>Oct 27, 2017</td>
-                    <td><span id="sparkline5"><canvas width="100" height="30" style="display: inline-block; width: 100px; height: 30px; vertical-align: top;"></canvas></span></td>
-                    <td class="pd-r-0-force tx-center"><a href="" class="tx-gray-600"><i class="icon ion-more tx-18 lh-0"></i></a></td>
-                  </tr> -->
+                  {% endif %}
+                  {% endif %}
                 </tbody>
               </table>
             </div>
