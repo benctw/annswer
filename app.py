@@ -86,7 +86,7 @@ def login(email=None, password=None, userid=None, loginkey=None, sso=None, sig=N
                         return redirect(url_for('page_error', errorcode=470001))
                     else:
                         g.conn.commit()
-                if (sso and sig and ac.discourseForumConfig['blnActivate']):
+                if (sso and sig and ac.discourseForumConfig['blnActivate'] and data['forum_userid']>0):
                     # do discourse sso
                     # header("Location: ./sso/forum.php?sso=".$payload."&sig=".$signature);
                     # die();
@@ -120,10 +120,16 @@ def signup():
         return redirect(url_for('page_error', errorcode=460776))
     elif len(username)>20:
         return redirect(url_for('page_error', errorcode=460780))
-    elif not re.search('^[a-zA-Z0-9]{1,}', username):
+    elif not re.findall('^\w{3,20}', username):
         return redirect(url_for('page_error', errorcode=460777))
-    elif not re.search('[a-zA-Z0-9]{1,}$', username):
-        return redirect(url_for('page_error', errorcode=460778))
+    elif len(re.findall('^\w{3,20}', username)[0]) != len(username):
+        return redirect(url_for('page_error', errorcode=460777))
+    elif len(username.replace(' ', '')) != len(username):
+        return redirect(url_for('page_error', errorcode=460777))
+    # elif not re.search('^[a-zA-Z0-9]{1,}', username):
+    #     return redirect(url_for('page_error', errorcode=460777))
+    # elif not re.search('[a-zA-Z0-9]{1,}$', username):
+    #     return redirect(url_for('page_error', errorcode=460778))
     elif len(password1)==0:
         return redirect(url_for('page_error', errorcode=460771))
     elif password1!=password2:
@@ -193,8 +199,8 @@ def activat_check_code(email=None, activatecode=None):
             if ac.discourseForumConfig['blnActivate']:
                 discoursepassword = generateRandomString(24)
                 discourseuser = g.discourseClient.create_user('', data['username'], email, discoursepassword, active='true')
-                if discourseuser:
-                    sql_update = f"UPDATE user SET `forum_password`='{discoursepassword}', forum_userid={discourseuser['user_id']}  WHERE email='{email}' and activate_code='{activatecode}'"
+                if discourseuser and discourseuser.get('user_id')>0:
+                    sql_update = f"UPDATE user SET `forum_password`='{discoursepassword}', forum_userid={discourseuser.get('user_id')}  WHERE email='{email}' and activate_code='{activatecode}'"
                     cursor.execute(sql_update)
                     g.conn.commit()
                 print(discourseuser)
@@ -471,7 +477,7 @@ def page_signin():
                                 payload = '' if request.args.get('sso')==None else request.args.get('sso'),
                                 signature = '' if request.args.get('sig')==None else request.args.get('sig'))
 
-@app.route('/signup/<string:email>/<string:activatecode>')
+@app.route('/signup/<string:email>/<string:activatecode>', methods=['GET'])
 def page_signup2(email, activatecode):
     return activat_check_code(email=email, activatecode=activatecode)
 
