@@ -30,7 +30,7 @@ def getRootPath():
     except:
         return os.path.abspath(os.path.dirname(__file__))
 
-def generateRandomString(length = 12):
+def generateRandomString(length = 16):
     characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
     randomString=''
     for _ in range(length):
