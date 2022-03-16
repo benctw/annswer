@@ -141,7 +141,7 @@ def signup():
     'annswer', 'annswerorg', 'annswerforum', 'macs', 'macsai', 'support', 'hp', 'account-created', 
     'password-reset', 'admin-login', 'confirm-admin', 'account-created', 'activate-account', 
     'confirm-email-token', 'authorize-email', 'theannswer', 'theanswer', 'theannswerorg', 'theanswerorg'):
-        if _ == username:
+        if _.lower() in username.lower() or username.lower() in _.lower():
             return redirect(url_for('page_error', errorcode=460781))
     sql = f"SELECT `id`, `email`, `username`, `password`, `salt` FROM user WHERE email='{email}'"
     with g.conn.cursor() as cursor:
