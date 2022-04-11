@@ -346,10 +346,19 @@ def before():
         g.discourseUserClient = DiscourseClient(ac.discourseForumConfig['strUrl'], api_username='benctw', api_key=ac.discourseForumConfig['strSystemApiKey'])
         pass
 
-@app.teardown_request
-def teardown(exception):
+@app.after_request
+def after_request(response):
     # 關閉連線資源
     g.conn.close()
+    # print('after request finished')
+    # print(request.url)
+    # response.headers['key'] = 'value'
+    return response
+
+# @app.teardown_request
+# def teardown(exception):
+#     # 關閉連線資源
+#     g.conn.close()
 
 @app.errorhandler(404)
 def page_not_found(error):
